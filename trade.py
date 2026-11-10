@@ -9,12 +9,11 @@ from alpaca.trading.enums import OrderSide, TimeInForce, OrderClass, QueryOrderS
 from google import genai
 
 # ==========================================
-# 1. CONFIGURATION & CREDENTIALS
+# 1. CONFIGURATION & CREDENTIALS (SECURE)
 # ==========================================
-ALPACA_API_KEY = "PKXDUZWPEBSFS2KP2BLY5TSQCY"
-ALPACA_SECRET_KEY = "3jTZTmDZSFkHr2PhDcoEuuw4nggHSYEfLGtRhzaXcWZz"
-GEMINI_API_KEY = "AQ.Ab8RN6J3ibiFd2eaxPK4nSXg30_2oqe1J4uHsCnUQS3HXNN29g"
-
+ALPACA_API_KEY = os.environ.get("ALPACA_API_KEY")
+ALPACA_SECRET_KEY = os.environ.get("ALPACA_SECRET_KEY")
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 # Risk Management Limits
 MAX_STOCKS_PER_SECTOR = 4   # Hard cap: no more than 4 open positions in the same sector
 TARGET_ALLOCATION = 200.0   # Dollar amount per stock

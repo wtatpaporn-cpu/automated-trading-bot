@@ -275,8 +275,8 @@ for chosen_ticker in qualified_stocks:
         if shares_to_buy < 1:
             shares_to_buy = 1
             
-        take_profit_price = round(current_price * 1.05, 2)  # +5%
-        stop_loss_price = round(current_price * 0.97, 2)    # -3%
+        take_profit_price = round(current_price * 1.1, 2)  # +10%
+        stop_loss_price = round(current_price * 0.95, 2)    # -5%
         
         print(f"\n-> Placing order for {chosen_ticker} ({stock_sector}): ~${current_price:.2f}/share ({shares_to_buy} shares)")
         print(f"   Take Profit: ${take_profit_price} | Stop Loss: ${stop_loss_price}")

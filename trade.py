@@ -15,8 +15,8 @@ ALPACA_API_KEY = os.environ.get("ALPACA_API_KEY")
 ALPACA_SECRET_KEY = os.environ.get("ALPACA_SECRET_KEY")
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 # Risk Management Limits
-MAX_STOCKS_PER_SECTOR = 4   # Hard cap: no more than 4 open positions in the same sector
-TARGET_ALLOCATION = 200.0   # Dollar amount per stock
+MAX_STOCKS_PER_SECTOR = 5   # Hard cap: no more than 5 open positions in the same sector
+TARGET_ALLOCATION = 1000.0   # Dollar amount per stock
 
 print("Initializing clients...")
 ai_client = genai.Client(api_key=GEMINI_API_KEY)

@@ -159,7 +159,7 @@ for raw_ticker in watchlist:
         for attempt in range(3):
             try:
                 response = ai_client.models.generate_content(
-                    model="gemini-3.8-flash",
+                    model="gemini-3.5-flash-lite",
                     contents=prompt,
                     config={
                         "response_mime_type": "application/json",
@@ -182,4 +182,70 @@ for raw_ticker in watchlist:
         reason = result_data["reason"]
 
         if is_passed:
-            qualified_stocks.append
+            qualified_stocks.append(ticker)
+            print(f"  ✅ [PASS]   {ticker:<5} | {reason[:75]}...")
+            log_trade_decision(current_time, raw_ticker, f"{forward_pe:.2f}", "N/A", f"{roe*100:.1f}%", "AI_PASS", reason)
+        else:
+            print(f"  ❌ [REJECT] {ticker:<5} | {reason[:75]}...")
+            log_trade_decision(current_time, raw_ticker, f"{forward_pe:.2f}", "N/A", f"{roe*100:.1f}%", "AI_REJECT", reason)
+
+        time.sleep(4.1)
+
+    except Exception as e:
+        print(f"  ⚠️ [ERROR]  {raw_ticker}: {e}")
+
+print(f"\nScreening complete! {len(qualified_stocks)} approved.")
+
+
+# ==========================================
+# 6. FETCH PORTFOLIO & CASH
+# ==========================================
+current_industry_counts = {}
+available_cash = 0.0
+
+try:
+    account = alpaca_client.get_account()
+    available_cash = float(account.cash)
+
+    for p in alpaca_client.get_all_positions():
+        pos_ticker = p.symbol.replace(".", "-")
+        pos_ind = yf.Ticker(pos_ticker).info.get("industry", "Unknown")
+        current_industry_counts[pos_ind] = current_industry_counts.get(pos_ind, 0) + 1
+
+    print(f"💰 Cash: ${available_cash:,.2f} | Industries: {len(current_industry_counts)} tracked")
+except Exception as e:
+    print(f"⚠️ Account fetch error: {e}")
+    exit()
+
+
+# ==========================================
+# 7. PORTFOLIO REBALANCING & AUDIT
+# ==========================================
+print("\nAuditing portfolio...")
+
+industry_positions = {}
+for p in alpaca_client.get_all_positions():
+    pos_ticker = p.symbol.replace(".", "-")
+    try:
+        pos_ind = yf.Ticker(pos_ticker).info.get("industry", "Unknown")
+    except:
+        pos_ind = "Unknown"
+    industry_positions.setdefault(pos_ind, []).append((p, pos_ticker))
+
+# Enforce Industry Caps
+for ind, positions in industry_positions.items():
+    if len(positions) > MAX_STOCKS_PER_INDUSTRY:
+        excess = len(positions) - MAX_STOCKS_PER_INDUSTRY
+        print(f"  ⚠️ Industry '{ind}' exceeds cap ({len(positions)}/{MAX_STOCKS_PER_INDUSTRY}). Pruning {excess}...")
+
+        for p, ticker in positions[-excess:]:
+            try:
+                for order in alpaca_client.get_orders(filter=GetOrdersRequest(status=QueryOrderStatus.OPEN, symbols=[ticker])):
+                    try: 
+                        alpaca_client.cancel_order_by_id(order.id)
+                    except: 
+                        pass
+                time.sleep(1.0)
+                alpaca_client.submit_order(order_data=MarketOrderRequest(symbol=ticker, qty=p.qty, side=OrderSide.SELL, time_in_force=TimeInForce.DAY))
+                print(f"    📉 Sold {ticker} (Industry Cap)")
+                log_trade_decision(current_time, ticker, "N/A", "N/A", "N/A", "

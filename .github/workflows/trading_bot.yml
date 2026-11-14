@@ -1,8 +1,8 @@
 name: Automated Trading Bot
 
 on:
+  # Runs Monday through Friday at 14:30 UTC (9:30 AM EST / Market Open)
   schedule:
-    # Runs Monday through Friday at 14:30 UTC (9:30 AM EST / Market Open)
     - cron: '30 14 * * 1-5'
   workflow_dispatch: # Allows you to run the bot manually anytime with a button click!
 
@@ -30,3 +30,10 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           python trade.py
+
+      # 👇 ADDED: This saves trade_log.csv back to your repository automatically
+      - name: Commit and push updated trade log
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto-update trade log [skip ci]"
+          file_pattern: "trade_log.csv"

@@ -71,3 +71,111 @@ Timestamp,Ticker,Forward P/E,P/B,ROE (%),Decision,Notes
 2026-11-14 20:06:01,WDAY,14.83,N/A,16.0%,AI_PASS,Workday combines strong cloud software secular tailwinds and solid profitability with an attractive valuation for an aggressive growth portfolio.
 2026-11-14 20:06:01,WMT,39.76,N/A,22.3%,REJECTED,Failed Pre-Screen
 2026-11-14 20:06:01,XEL,17.86,N/A,11.4%,REJECTED,Failed Pre-Screen
+2026-11-14 20:34:11,AAPL,33.70,46.19,142.3%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,ABNB,29.58,11.81,35.8%,AI_GROWTH_PASS,"Airbnb demonstrates stellar fundamental metrics for an aggressive growth portfolio, featuring an 18.9% revenue growth rate, an exceptional 35.8% ROE, and a robust 23.0% profit margin. Although the forward P/E of ~29.6 is elevated, it is fully justifiable given the company's category dominance and secular tailwinds in the travel and experiential economy."
+2026-11-14 20:34:11,ADBE,8.87,8.08,61.9%,REJECTED,Failed Momentum or Overextended
+2026-11-14 20:34:11,ADI,24.09,5.75,12.2%,AI_GROWTH_PASS,"Analog Devices exhibits exceptional revenue growth of 39.6% alongside an industry-leading profit margin of 29.8% and a robust ROE of 12.2%, capturing powerful secular tailwinds in semiconductors despite a forward P/E of 24.1, making it a compelling high-beta growth opportunity."
+2026-11-14 20:34:11,ADP,22.90,24.08,78.9%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,ADSK,18.62,16.34,53.9%,AI_GROWTH_PASS,"Autodesk demonstrates strong financial metrics with a high ROE of 53.9%, solid revenue growth of 16.1%, and healthy profit margins of 21.1%. While traditionally a mature software player, its transition to cloud-based subscription models and sticky ecosystem provide strong secular tailwinds in design and engineering automation. A forward P/E of 18.62 is highly attractive for a software leader of this caliber, making it a justifiable entry for a growth-oriented portfolio."
+2026-11-14 20:34:11,AEP,18.73,2.15,10.6%,AI_REJECT,"American Electric Power Company is a regulated utility with a modest ROE of 10.6% and slow-growth characteristics, making it unsuitable for a high-beta aggressive growth equity portfolio despite decent revenue growth."
+2026-11-14 20:34:11,ALAB,31.02,19.39,28.2%,REJECTED,Failed Momentum or Overextended
+2026-11-14 20:34:11,ALNY,15.24,6.13,138.1%,REJECTED,Failed Momentum or Overextended
+2026-11-14 20:34:11,AMAT,15.02,11.25,43.4%,REJECTED,Failed Momentum or Overextended
+2026-11-14 20:34:11,AMD,30.19,12.81,12.0%,REJECTED,Failed Momentum or Overextended
+2026-11-14 20:34:11,AMGN,18.59,17.55,78.4%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,AMZN,24.42,4.70,27.4%,AI_GROWTH_PASS,"Amazon exhibits stellar operational efficiency with a 27.4% ROE and robust 16.9% profit margins, backed by steady 12.1% revenue growth. A forward P/E of 24.42 is exceptionally reasonable for a cloud and e-commerce giant scaling high-margin segments like AWS and advertising, making it a compelling buy for a high-beta growth portfolio."
+2026-11-14 20:34:11,APP,19.61,41.09,210.1%,AI_GROWTH_PASS,"Applovin demonstrates exceptional fundamentals for an aggressive growth portfolio, featuring massive revenue growth of 55.5%, a stellar profit margin of 65.9%, and an extraordinary ROE of 210.1%. Despite a high share price, its forward P/E of 19.61 is surprisingly reasonable given its hyper-growth profile and market leadership in advertising technology."
+2026-11-14 20:34:11,ARM,61.96,22.43,11.3%,REJECTED,Failed Momentum or Overextended
+2026-11-14 20:34:11,ASML,23.58,1283.82,65.6%,REJECTED,Failed Momentum or Overextended
+2026-11-14 20:34:11,AVGO,17.87,16.62,44.2%,AI_GROWTH_PASS,"Broadcom displays extraordinary top-line growth of 85.5% driven by massive secular tailwinds in AI semiconductors and networking infrastructure, combined with elite profitability reflected in a 42.9% profit margin and 44.2% ROE. Despite its high-growth profile, the forward P/E of 17.87 is surprisingly reasonable, offering an exceptional risk-reward profile for an aggressive growth portfolio."
+2026-11-14 20:34:11,AXON,33.40,6.82,7.6%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,BKNG,N/A,N/A,N/A,REJECTED,Missing Fundamental Data
+2026-11-14 20:34:11,BKR,17.51,2.44,15.1%,REJECTED,Failed Momentum or Overextended
+2026-11-14 20:34:11,CCEP,21.39,5.65,23.5%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,CDNS,32.81,12.89,22.9%,AI_GROWTH_PASS,"Cadence Design Systems demonstrates exceptional fundamentals with a 22.0% revenue growth rate, a strong 22.9% ROE, and a robust 22.5% profit margin. Operating at the core of semiconductor and electronic systems design, it benefits from powerful secular tailwinds like AI chip development and hyperscale computing. While a Forward P/E of 32.8 is elevated, it is fully justifiable for a high-beta growth portfolio given the company's high-conviction innovation leadership and monopolistic moats in EDA software."
+2026-11-14 20:34:11,CEG,20.85,3.01,18.3%,AI_GROWTH_PASS,"Constellation Energy Corporation (CEG) exhibits exceptional revenue growth of 45.4% and a strong ROE of 18.3%, driven by powerful secular tailwinds in clean energy and surging power demand from data centers. Despite a Forward P/E of 20.8, the aggressive top-line momentum and its dominant position as a nuclear operator justify the valuation for a high-beta growth portfolio."
+2026-11-14 20:34:11,CMCSA,7.14,0.97,11.4%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,COST,44.18,13.70,28.4%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,CPRT,17.59,3.24,16.2%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,CRWD,140.72,45.48,1.5%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,CRWV,-29.97,7.31,-63.9%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,CSCO,16.04,7.51,27.3%,REJECTED,Failed Momentum or Overextended
+2026-11-14 20:34:11,CSX,22.21,6.67,26.4%,AI_REJECT,"CSX operates in a mature, low-beta cyclical industry (railroads) rather than high-growth technology or disruptive innovation sectors. While it boasts solid ROE and profit margins, a 12 percent revenue growth rate combined with a forward P/E of 22.2 does not offer the hyper-growth profile or secular tailwinds required for an aggressive high-beta growth portfolio."
+2026-11-14 20:34:11,CTAS,36.72,17.37,41.4%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,DASH,22.49,6.98,10.5%,REJECTED,Failed Momentum or Overextended
+2026-11-14 20:34:11,DDOG,57.86,14.10,6.4%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,DXCM,26.58,12.26,37.7%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,EXC,15.25,1.59,9.1%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,FANG,8.49,1.33,4.9%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,FAST,39.00,15.26,35.3%,AI_REJECT,"While Fastenal boasts exceptional quality metrics including a 35.3% ROE, 15.5% revenue growth, and strong margins, its Forward P/E of nearly 39 is too rich for an industrial distributor in a high-beta growth portfolio where we prioritize disruptive innovation leaders with massive multi-year secular tailwinds."
+2026-11-14 20:34:11,FER,43.87,6.92,11.6%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,FTNT,32.61,41.59,153.1%,REJECTED,Failed Momentum or Overextended
+2026-11-14 20:34:11,GEHC,15.09,3.23,20.0%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,GILD,16.60,16.00,-22.4%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,GOOG,18.95,5.45,44.3%,REJECTED,Failed Momentum or Overextended
+2026-11-14 20:34:11,GOOGL,19.16,5.51,44.3%,REJECTED,Failed Momentum or Overextended
+2026-11-14 20:34:11,HON,22.53,3.15,44.4%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,HONA,N/A,N/A,N/A,REJECTED,Missing Fundamental Data
+2026-11-14 20:34:11,IDXX,41.69,29.68,68.9%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,INTC,33.32,2.76,-9.6%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,ISRG,35.58,9.62,17.9%,AI_GROWTH_PASS,"Intuitive Surgical demonstrates exceptional revenue growth, massive profit margins, and strong secular tailwinds in robotic-assisted surgery, justifying its premium valuation for a growth portfolio."
+2026-11-14 20:34:11,KDP,14.36,1.95,6.0%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,KLAC,21.46,30.43,91.4%,REJECTED,Failed Momentum or Overextended
+2026-11-14 20:34:11,LIN,26.91,6.13,17.7%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,LITE,14.87,11.82,-245.8%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,LRCX,18.46,20.29,70.1%,REJECTED,Failed Momentum or Overextended
+2026-11-14 20:34:11,MAR,N/A,N/A,N/A,REJECTED,Missing Fundamental Data
+2026-11-14 20:34:11,MCHP,13.91,5.05,12.6%,REJECTED,Failed Momentum or Overextended
+2026-11-14 20:34:11,MDLZ,20.08,3.22,15.5%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,MELI,28.09,9.22,26.2%,REJECTED,Failed Momentum or Overextended
+2026-11-14 20:34:11,META,18.03,6.02,32.3%,REJECTED,Failed Momentum or Overextended
+2026-11-14 20:34:11,MNST,35.67,9.24,24.7%,AI_REJECT,"While Monster Beverage exhibits strong historical growth, high profitability (ROE and margins), and operates in a favorable category, its forward P/E of over 35 is too elevated for an aggressive growth portfolio facing mature consumer defensive tailwinds and slowing relative velocity compared to pure-play tech or disruptive innovation leaders."
+2026-11-14 20:34:11,MPWR,29.81,18.17,24.5%,AI_GROWTH_PASS,"Monolithic Power Systems displays exceptional fundamentals for an aggressive growth portfolio, highlighted by a massive 63.1% revenue growth rate, strong profitability with a 23.9% profit margin, and a high ROE of 24.5%. Operating in the high-demand semiconductor space with powerful secular AI and tech tailwinds, its forward P/E of under 30 is justifiable given its hyper-growth trajectory."
+2026-11-14 20:34:11,MRNA,-53.34,13.20,-34.5%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,MRVL,21.33,7.42,16.5%,REJECTED,Failed Momentum or Overextended
+2026-11-14 20:34:11,MSTR,6.47,0.85,-21.6%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,MU,3.75,6.36,88.3%,REJECTED,Failed Momentum or Overextended
+2026-11-14 20:34:11,NBIS,-40.19,2.76,1.5%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,NFLX,16.48,8.71,53.5%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,NVDA,10.27,17.17,117.2%,REJECTED,Failed Momentum or Overextended
+2026-11-14 20:34:11,NXPI,14.45,5.53,28.7%,AI_GROWTH_PASS,"NXPI demonstrates exceptional fundamental strength with high ROE (28.7%), robust revenue growth (19.3%), and healthy profit margins (23.4%). Coupled with a reasonable forward P/E of 14.45 and strong secular positioning in automotive and industrial semiconductors, it offers a compelling growth-at-a-reasonable-price profile suitable for a growth portfolio."
+2026-11-14 20:34:11,ODFL,25.83,7.72,26.0%,REJECTED,Failed Momentum or Overextended
+2026-11-14 20:34:11,ORLY,N/A,N/A,N/A,REJECTED,Missing Fundamental Data
+2026-11-14 20:34:11,PANW,65.98,9.55,1.7%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,PAYX,18.11,11.11,47.1%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,PCAR,15.64,2.68,13.7%,REJECTED,Failed Momentum or Overextended
+2026-11-14 20:34:11,PDD,6.39,1.66,22.7%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,PEP,16.87,8.90,52.2%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,PLTR,66.17,36.04,40.9%,REJECTED,Failed Momentum or Overextended
+2026-11-14 20:34:11,PYPL,10.04,2.55,23.8%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,QCOM,14.13,6.08,52.8%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,RKLB,859.60,6.78,-6.4%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,ROP,19.53,2.48,13.2%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,ROST,25.66,10.98,42.6%,AI_REJECT,"While Ross Stores exhibits solid profitability with a strong ROE of 42.6% and decent revenue growth, it operates as a mature off-price apparel retailer rather than a high-beta innovation leader with secular growth tailwinds. Furthermore, a Forward P/E of over 25 for a traditional retail business does not offer an aggressive enough growth-to-valuation profile to warrant a buy for a high-beta growth portfolio."
+2026-11-14 20:34:11,SBUX,N/A,N/A,N/A,REJECTED,Missing Fundamental Data
+2026-11-14 20:34:11,SHOP,59.79,14.84,16.8%,REJECTED,Failed Momentum or Overextended
+2026-11-14 20:34:11,SNDK,3.06,7.03,141.2%,REJECTED,Failed Momentum or Overextended
+2026-11-14 20:34:11,SNPS,24.41,2.80,3.7%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,SPCX,N/A,N/A,N/A,REJECTED,Missing Fundamental Data
+2026-11-14 20:34:11,STX,8.09,35.14,259.4%,REJECTED,Failed Momentum or Overextended
+2026-11-14 20:34:11,TER,20.73,10.57,42.7%,REJECTED,Failed Momentum or Overextended
+2026-11-14 20:34:11,TMUS,11.92,3.21,19.4%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,TRI,23.22,4.22,14.1%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,TSLA,180.72,17.28,3.8%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,TTWO,22.50,11.61,-6.8%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,TXN,26.10,14.46,39.7%,AI_REJECT,"Texas Instruments is a high-quality semiconductor business with excellent profitability and solid revenue growth, but its end markets in industrial and automotive are more cyclical rather than pure high-beta disruptive innovation. Furthermore, a forward P/E of 26x combined with lower relative growth compared to high-flying AI/software peers does not offer the aggressive growth profile required for a high-beta growth portfolio."
+2026-11-14 20:34:11,VRTX,27.04,6.53,20.8%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,WDC,7.32,11.83,129.6%,REJECTED,Failed Momentum or Overextended
+2026-11-14 20:34:11,WMT,39.76,10.36,22.3%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,XEL,17.86,2.03,11.4%,REJECTED,Failed Relaxed Growth Pre-Screen
+2026-11-14 20:34:11,ABNB,N/A,N/A,N/A,SIMPLE_BUY,Bought 2.6769 fractional shares in Travel Services (Simple Order).
+2026-11-14 20:34:11,ADI,N/A,N/A,N/A,SIMPLE_BUY,Bought 1.2564 fractional shares in Semiconductors (Simple Order).
+2026-11-14 20:34:11,ADSK,N/A,N/A,N/A,SIMPLE_BUY,Bought 1.8909 fractional shares in Software - Application (Simple Order).
+2026-11-14 20:34:11,AMZN,N/A,N/A,N/A,SIMPLE_BUY,Bought 1.875 fractional shares in Internet Retail (Simple Order).
+2026-11-14 20:34:11,APP,N/A,N/A,N/A,SIMPLE_BUY,Bought 1.2222 fractional shares in Advertising Agencies (Simple Order).
+2026-11-14 20:34:11,AVGO,N/A,N/A,N/A,SIMPLE_BUY,Bought 1.4409 fractional shares in Semiconductors (Simple Order).
+2026-11-14 20:34:11,CDNS,N/A,N/A,N/A,SIMPLE_BUY,Bought 1.5479 fractional shares in Software - Application (Simple Order).
+2026-11-14 20:34:11,CEG,N/A,N/A,N/A,SIMPLE_BUY,Bought 1.7844 fractional shares in Utilities - Independent Power Producers (Simple Order).
+2026-11-14 20:34:11,ISRG,N/A,N/A,N/A,SIMPLE_BUY,Bought 1.1272 fractional shares in Medical Instruments & Supplies (Simple Order).
+2026-11-14 20:34:11,MPWR,N/A,N/A,N/A,SIMPLE_BUY,Bought 0.3596 fractional shares in Semiconductors (Simple Order).
+2026-11-14 20:34:11,NXPI,N/A,N/A,N/A,SKIPPED,Industry cap reached for Semiconductors

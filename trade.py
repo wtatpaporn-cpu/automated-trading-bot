@@ -1,5 +1,6 @@
 import os
 import csv
+import time
 from datetime import datetime
 import pandas as pd
 import yfinance as yf
@@ -14,9 +15,21 @@ from google import genai
 ALPACA_API_KEY = os.environ.get("ALPACA_API_KEY")
 ALPACA_SECRET_KEY = os.environ.get("ALPACA_SECRET_KEY")
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
-# Risk Management Limits
-MAX_STOCKS_PER_SECTOR = 4   # Hard cap: no more than 4 open positions in the same sector
-TARGET_ALLOCATION = 500.0   # Dollar amount per stock
+
+# Aggressive Growth Strategy Limits
+MAX_STOCKS_PER_INDUSTRY = 3      # Capped by specific industry (e.g. Semiconductors) instead of broad sector
+TARGET_ALLOCATION = 500.0        # Dollar amount per stock
+TAKE_PROFIT_PCT = 0.25           # +25% Take Profit for aggressive runners
+STOP_LOSS_PCT = 0.15             # -15% Stop Loss for high-beta volatility room
+
+# Buy Thresholds (Aggressive Growth & Quality)
+BUY_MAX_FORWARD_PE = 75.0        # Forward P/E ceiling up to 75
+BUY_MIN_ROE = 0.12               # 12% Return on Equity
+BUY_MIN_REV_GROWTH = 0.15        # 15%+ top-line revenue growth
+BUY_MAX_DIST_HIGH = 0.35         # Allows up to 35% pullbacks from 52w high
+
+# Sell / Hold Audit Thresholds (Looser to let winners run)
+SELL_MIN_REV_GROWTH = 0.05       # Only force-sell if revenue growth drops below 5%
 
 print("Initializing clients...")
 ai_client = genai.Client(api_key=GEMINI_API_KEY)
@@ -35,7 +48,7 @@ def log_trade_decision(timestamp, ticker, pe, pb, roe, decision, notes=""):
     with open(LOG_FILENAME, mode='a', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
         if not file_exists:
-            writer.writerow(["Timestamp", "Ticker", "P/E", "P/B", "ROE (%)", "Decision", "Notes"])
+            writer.writerow(["Timestamp", "Ticker", "Forward P/E", "P/B", "ROE (%)", "Decision", "Notes"])
         writer.writerow([timestamp, ticker, pe, pb, roe, decision, notes])
 
 
@@ -66,61 +79,108 @@ try:
 
 except Exception as e:
     print(f"Error reading CSV file: {e}")
-    watchlist = ["AAPL", "MSFT", "NVDA"]
+    watchlist = ["AAPL", "MSFT", "NVDA", "AVGO", "PLTR"]
 
 
 # ==========================================
-# 4. MULTI-FACTOR SCREENING & LOGGING
+# 4. REFINED GROWTH SCREENING & GEMINI AI
 # ==========================================
-print(f"\nRunning Multi-Factor Screen on {len(watchlist)} stocks...")
+print(f"\nRunning Aggressive Growth & AI Screen on {len(watchlist)} stocks...")
 qualified_stocks = []
 current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-for ticker in watchlist:
+for raw_ticker in watchlist:
+    ticker = raw_ticker.replace(".", "-")
+    
     try:
         stock = yf.Ticker(ticker)
-        
-        # Fundamental Value Check
         info = stock.info
-        pe_ratio = info.get("trailingPE", float("inf"))
-        pb_ratio = info.get("priceToBook", float("inf"))
-        roe = info.get("returnOnEquity", 0)
         
-        pe_ratio = pe_ratio if pe_ratio is not None else float("inf")
-        pb_ratio = pb_ratio if pb_ratio is not None else float("inf")
-        roe = roe if roe is not None else 0
+        forward_pe = info.get("forwardPE")
+        pb_ratio = info.get("priceToBook")
+        roe = info.get("returnOnEquity")
+        revenue_growth = info.get("revenueGrowth", 0)
+        profit_margins = info.get("profitMargins", 0)
+        fifty_two_week_high = info.get("fiftyTwoWeekHigh")
+        industry = info.get("industry", "Unknown")
+        sector = info.get("sector", "Unknown")
+        company_name = info.get("shortName", ticker)
         
-        is_valuable = (0 < pe_ratio < 25) and (pb_ratio < 5) and (roe > 0.10)
-        if not is_valuable:
-            log_trade_decision(current_time, ticker, f"{pe_ratio:.2f}", f"{pb_ratio:.2f}", f"{roe*100:.1f}%", "REJECTED", "Failed Value Filter")
+        # Handle missing data safely
+        if not forward_pe or not pb_ratio or not roe or not fifty_two_week_high:
+            log_trade_decision(current_time, raw_ticker, "N/A", "N/A", "N/A", "REJECTED", "Missing Fundamental Data")
+            continue
+
+        # 1. Math Pre-Screen: Aggressive Growth & Quality Thresholds
+        is_growth_and_quality = (
+            (0 < forward_pe <= BUY_MAX_FORWARD_PE) and 
+            (roe >= BUY_MIN_ROE) and 
+            (revenue_growth >= BUY_MIN_REV_GROWTH) and
+            (profit_margins > 0.0)
+        )
+        
+        if not is_growth_and_quality:
+            log_trade_decision(current_time, raw_ticker, f"{forward_pe:.2f}", f"{pb_ratio:.2f}", f"{roe*100:.1f}%", "REJECTED", "Failed Growth Pre-Screen")
             continue
             
-        # Technical Momentum Check
+        # 2. Technical Momentum & Extension Check (Allows up to 35% pullback)
         df = stock.history(period="50d")
         if len(df) < 20:
-            log_trade_decision(current_time, ticker, f"{pe_ratio:.2f}", f"{pb_ratio:.2f}", f"{roe*100:.1f}%", "REJECTED", "Insufficient Data")
+            log_trade_decision(current_time, raw_ticker, f"{forward_pe:.2f}", f"{pb_ratio:.2f}", f"{roe*100:.1f}%", "REJECTED", "Insufficient History")
             continue
             
-        df['SMA_20'] = df['Close'].rolling(window=20).mean()
         current_price = df['Close'].iloc[-1]
-        sma_20 = df['SMA_20'].iloc[-1]
+        sma_20 = df['Close'].rolling(window=20).mean().iloc[-1]
+        distance_from_high = (fifty_two_week_high - current_price) / fifty_two_week_high
         
-        if current_price > sma_20:
-            qualified_stocks.append(ticker)
-            print(f"  [PASS BOTH] {ticker} is Undervalued AND in an Uptrend!")
-        else:
-            log_trade_decision(current_time, ticker, f"{pe_ratio:.2f}", f"{pb_ratio:.2f}", f"{roe*100:.1f}%", "REJECTED", "Failed Momentum Filter")
-            
-    except Exception as e:
-        print(f"  [ERROR] Processing {ticker}: {e}")
+        if not (current_price > sma_20 and distance_from_high <= BUY_MAX_DIST_HIGH):
+            log_trade_decision(current_time, raw_ticker, f"{forward_pe:.2f}", f"{pb_ratio:.2f}", f"{roe*100:.1f}%", "REJECTED", "Failed Momentum or Overextended")
+            continue
 
-print(f"\nScreening complete! {len(qualified_stocks)} stock(s) passed both filters: {qualified_stocks}")
+        # 3. Gemini Aggressive Growth Evaluation
+        prompt = f"""
+        You are an elite aggressive growth equity analyst. Evaluate this stock for a high-beta growth portfolio:
+        - Company: {company_name} ({ticker})
+        - Sector / Industry: {sector} / {industry}
+        - Current Price: ${current_price:.2f}
+        - Forward P/E Ratio: {forward_pe}
+        - ROE: {roe * 100:.1f}%
+        - Revenue Growth Rate: {revenue_growth * 100:.1f}%
+        - Profit Margin: {profit_margins * 100:.1f}%
+
+        Is this a high-conviction innovation leader with strong secular tailwinds, and is its valuation justifiable to buy today?
+        Respond with EXACTLY one word on the first line: either PASS or REJECT, followed by a short 1-sentence justification on the next line.
+        """
+
+        response = ai_client.models.generate_content(
+            model='gemini-3.5-flash-lite',
+            contents=prompt,
+        )
+        
+        ai_output = response.text.strip().split('\n')
+        decision = ai_output[0].upper()
+        reason = ai_output[1] if len(ai_output) > 1 else "No reason provided"
+
+        if "PASS" in decision:
+            qualified_stocks.append(ticker)
+            print(f"  [AI GROWTH PASS] {ticker} ({company_name}) — {reason}")
+            log_trade_decision(current_time, raw_ticker, f"{forward_pe:.2f}", f"{pb_ratio:.2f}", f"{roe*100:.1f}%", "AI_GROWTH_PASS", reason)
+        else:
+            print(f"  [AI REJECTED] {ticker} ({company_name}) — {reason}")
+            log_trade_decision(current_time, raw_ticker, f"{forward_pe:.2f}", f"{pb_ratio:.2f}", f"{roe*100:.1f}%", "AI_REJECT", reason)
+
+        time.sleep(0.5)
+
+    except Exception as e:
+        print(f"  [ERROR] Processing {raw_ticker}: {e}")
+
+print(f"\nScreening complete! {len(qualified_stocks)} stock(s) approved: {qualified_stocks}")
 
 
 # ==========================================
 # 5. FETCH EXISTING PORTFOLIO & CASH BALANCE
 # ==========================================
-current_sector_counts = {}
+current_industry_counts = {}
 available_cash = 0.0
 
 try:
@@ -129,47 +189,45 @@ try:
     
     open_positions = alpaca_client.get_all_positions()
     for p in open_positions:
-        pos_ticker = p.symbol
+        pos_ticker = p.symbol.replace(".", "-")
         pos_info = yf.Ticker(pos_ticker).info
-        pos_sector = pos_info.get('sector', 'Unknown')
-        current_sector_counts[pos_sector] = current_sector_counts.get(pos_sector, 0) + 1
+        pos_ind = pos_info.get('industry', 'Unknown')
+        current_industry_counts[pos_ind] = current_industry_counts.get(pos_ind, 0) + 1
         
     print(f"\n💰 Current Available Cash: ${available_cash:,.2f}")
-    print(f"📊 Current Portfolio Sector Counts: {current_sector_counts}")
+    print(f"📊 Current Portfolio Industry Counts: {current_industry_counts}")
 except Exception as e:
     print(f"⚠️ Could not fetch Alpaca account details: {e}")
     exit()
 
-# ==========================================
-# 5.5 PORTFOLIO REBALANCING & SECTOR PRUNING
-# ==========================================
-print("\n🔄 Auditing portfolio for sector caps and filter compliance...")
 
-# 1. Group current open positions by sector
-sector_positions = {}
+# ==========================================
+# 5.5 PORTFOLIO REBALANCING & INDUSTRY PRUNING
+# ==========================================
+print("\n🔄 Auditing portfolio for industry caps and filter compliance...")
+
+industry_positions = {}
 for p in open_positions:
-    pos_ticker = p.symbol
+    pos_ticker = p.symbol.replace(".", "-")
     try:
         pos_info = yf.Ticker(pos_ticker).info
-        pos_sector = pos_info.get('sector', 'Unknown')
+        pos_ind = pos_info.get('industry', 'Unknown')
     except Exception:
-        pos_sector = 'Unknown'
+        pos_ind = 'Unknown'
         
-    if pos_sector not in sector_positions:
-        sector_positions[pos_sector] = []
-    sector_positions[pos_sector].append((p, pos_ticker))
+    if pos_ind not in industry_positions:
+        industry_positions[pos_ind] = []
+    industry_positions[pos_ind].append((p, pos_ticker))
 
-# 2. Enforce Sector Caps (Sell excess positions if a sector is over limit)
-for sector, positions in sector_positions.items():
-    if len(positions) > MAX_STOCKS_PER_SECTOR:
-        excess_count = len(positions) - MAX_STOCKS_PER_SECTOR
-        print(f"  ⚠️ Sector '{sector}' has {len(positions)} positions (Cap: {MAX_STOCKS_PER_SECTOR}). Pruning {excess_count} excess...")
+# Enforce Industry Caps
+for ind, positions in industry_positions.items():
+    if len(positions) > MAX_STOCKS_PER_INDUSTRY:
+        excess_count = len(positions) - MAX_STOCKS_PER_INDUSTRY
+        print(f"  ⚠️ Industry '{ind}' has {len(positions)} positions (Cap: {MAX_STOCKS_PER_INDUSTRY}). Pruning {excess_count} excess...")
         
-        # Sell the excess positions (taking the newest or last added in the list)
         for p, ticker in positions[-excess_count:]:
-            print(f"    📉 [SECTOR PRUNE] Selling {ticker} to bring '{sector}' back down to cap.")
+            print(f"    📉 [INDUSTRY PRUNE] Selling {ticker} to bring '{ind}' back down to cap.")
             try:
-                # Cancel open bracket orders (TP/SL) so shares become available to sell
                 open_orders = alpaca_client.get_orders(filter=GetOrdersRequest(status=QueryOrderStatus.OPEN, symbols=[ticker]))
                 for order in open_orders:
                     alpaca_client.cancel_order_by_id(order.id)
@@ -181,35 +239,33 @@ for sector, positions in sector_positions.items():
                     time_in_force=TimeInForce.GTC
                 )
                 alpaca_client.submit_order(order_data=sell_order_data)
-                log_trade_decision(current_time, ticker, "N/A", "N/A", "N/A", "SECTOR_PRUNE_SELL", f"Exceeded sector cap of {MAX_STOCKS_PER_SECTOR} for {sector}")
+                log_trade_decision(current_time, ticker, "N/A", "N/A", "N/A", "INDUSTRY_PRUNE_SELL", f"Exceeded industry cap for {ind}")
             except Exception as e:
                 print(f"    ❌ Failed to sell {ticker}: {e}")
 
-# 3. Audit remaining positions for fundamental/momentum decay
-print("\n🔍 Checking remaining positions against value & momentum filters...")
+# Relaxed Hold Audit for Existing Positions (Lets winners run)
+print("\n🔍 Auditing remaining positions against relaxed growth filters...")
 remaining_positions = alpaca_client.get_all_positions()
 for p in remaining_positions:
-    pos_ticker = p.symbol
+    pos_ticker = p.symbol.replace(".", "-")
     try:
         stock_obj = yf.Ticker(pos_ticker)
         info = stock_obj.info
         
-        pe = info.get("trailingPE", float("inf")) or float("inf")
-        pb = info.get("priceToBook", float("inf")) or float("inf")
-        roe = info.get("returnOnEquity", 0) or 0
+        rev_growth = info.get("revenueGrowth", 0) or 0
         
-        is_still_valuable = (0 < pe < 25) and (pb < 5) and (roe > 0.10)
-        
-        df_pos = stock_obj.history(period="50d")
+        df_pos = stock_obj.history(period="60d")
         is_in_uptrend = True
-        if len(df_pos) >= 20:
-            df_pos['SMA_20'] = df_pos['Close'].rolling(window=20).mean()
-            is_in_uptrend = df_pos['Close'].iloc[-1] > df_pos['SMA_20'].iloc[-1]
+        if len(df_pos) >= 50:
+            df_pos['SMA_50'] = df_pos['Close'].rolling(window=50).mean()
+            is_in_uptrend = df_pos['Close'].iloc[-1] > df_pos['SMA_50'].iloc[-1]
             
-        if not (is_still_valuable and is_in_uptrend):
-            print(f"  📉 [FILTER SELL] {pos_ticker} failed current filters. Selling position.")
+        # Hold as long as revenue growth hasn't collapsed and it holds its 50-day trend
+        is_still_valid = (rev_growth >= SELL_MIN_REV_GROWTH) and is_in_uptrend
+        
+        if not is_still_valid:
+            print(f"  📉 [FILTER SELL] {pos_ticker} failed growth/trend audit. Selling position.")
             
-            # Cancel open bracket orders (TP/SL) so shares become available to sell
             open_orders = alpaca_client.get_orders(filter=GetOrdersRequest(status=QueryOrderStatus.OPEN, symbols=[pos_ticker]))
             for order in open_orders:
                 alpaca_client.cancel_order_by_id(order.id)
@@ -221,65 +277,60 @@ for p in remaining_positions:
                 time_in_force=TimeInForce.GTC
             )
             alpaca_client.submit_order(order_data=sell_order_data)
-            log_trade_decision(current_time, pos_ticker, f"{pe:.2f}", f"{pb:.2f}", f"{roe*100:.1f}%", "FILTER_SELL", "Failed ongoing screen filters")
+            log_trade_decision(current_time, pos_ticker, "N/A", "N/A", "N/A", "FILTER_SELL", "Failed ongoing growth/trend audit")
             
     except Exception as e:
         print(f"  ⚠️ Error auditing {pos_ticker}: {e}")
 
-# Refresh cash and sector counts after all rebalancing sales
+# Refresh cash and industry counts
 account_refreshed = alpaca_client.get_account()
 available_cash = float(account_refreshed.cash)
 
-# Re-calculate open sector counts for the buying loop later
-current_sector_counts = {}
+current_industry_counts = {}
 for p in alpaca_client.get_all_positions():
     try:
-        sec = yf.Ticker(p.symbol).info.get('sector', 'Unknown')
+        ind = yf.Ticker(p.symbol.replace(".", "-")).info.get('industry', 'Unknown')
     except:
-        sec = 'Unknown'
-    current_sector_counts[sec] = current_sector_counts.get(sec, 0) + 1
+        ind = 'Unknown'
+    current_industry_counts[ind] = current_industry_counts.get(ind, 0) + 1
 
 print(f"\n💰 Post-Rebalance Available Cash: ${available_cash:,.2f}")
-print(f"📊 Post-Rebalance Sector Counts: {current_sector_counts}\n")
+print(f"📊 Post-Rebalance Industry Counts: {current_industry_counts}\n")
 
 
 # ==========================================
-# 6. EXECUTE BRACKET ORDERS WITH CASH & SECTOR CHECKS
+# 6. EXECUTE BRACKET ORDERS
 # ==========================================
 if not qualified_stocks:
     print("No stocks passed filters today. Exiting safely.")
     exit()
 
-print(f"\nEvaluating bracket orders with cash & sector limits...")
+print(f"\nEvaluating bracket orders with cash & industry limits...")
 
 for chosen_ticker in qualified_stocks:
-    # Check if we have enough cash left for another position
     if available_cash < TARGET_ALLOCATION:
         print(f"\n❌ Stopping execution: Available cash (${available_cash:,.2f}) is below target allocation (${TARGET_ALLOCATION:,.2f}).")
-        log_trade_decision(current_time, chosen_ticker, "N/A", "N/A", "N/A", "SKIPPED", f"Insufficient cash (${available_cash:,.2f})")
+        log_trade_decision(current_time, chosen_ticker, "N/A", "N/A", "N/A", "SKIPPED", f"Insufficient cash")
         break
 
     try:
         stock_obj = yf.Ticker(chosen_ticker)
-        stock_sector = stock_obj.info.get('sector', 'Unknown')
+        stock_industry = stock_obj.info.get('industry', 'Unknown')
         
-        # Check Sector Cap
-        existing_sector_count = current_sector_counts.get(stock_sector, 0)
-        if existing_sector_count >= MAX_STOCKS_PER_SECTOR:
-            print(f"    🚫 Skipping {chosen_ticker}: Sector '{stock_sector}' has reached its limit ({existing_sector_count}/{MAX_STOCKS_PER_SECTOR} active).")
-            log_trade_decision(current_time, chosen_ticker, "N/A", "N/A", "N/A", "SKIPPED", f"Sector cap reached for {stock_sector}")
+        existing_industry_count = current_industry_counts.get(stock_industry, 0)
+        if existing_industry_count >= MAX_STOCKS_PER_INDUSTRY:
+            print(f"    🚫 Skipping {chosen_ticker}: Industry '{stock_industry}' has reached its limit.")
+            log_trade_decision(current_time, chosen_ticker, "N/A", "N/A", "N/A", "SKIPPED", f"Industry cap reached for {stock_industry}")
             continue
 
         current_price = stock_obj.history(period="1d")['Close'].iloc[-1]
-        shares_to_buy = int(TARGET_ALLOCATION / current_price)
-        if shares_to_buy < 1:
-            shares_to_buy = 1
-            
-        take_profit_price = round(current_price * 1.1, 2)  # +10%
-        stop_loss_price = round(current_price * 0.95, 2)    # -5%
+        shares_to_buy = round(TARGET_ALLOCATION / current_price, 4)
         
-        print(f"\n-> Placing order for {chosen_ticker} ({stock_sector}): ~${current_price:.2f}/share ({shares_to_buy} shares)")
-        print(f"   Take Profit: ${take_profit_price} | Stop Loss: ${stop_loss_price}")
+        take_profit_price = round(current_price * (1 + TAKE_PROFIT_PCT), 2)  # +25% target
+        stop_loss_price = round(current_price * (1 - STOP_LOSS_PCT), 2)      # -15% stop loss
+        
+        print(f"\n-> Placing order for {chosen_ticker} ({stock_industry}): ~${current_price:.2f}/share ({shares_to_buy} shares)")
+        print(f"    Take Profit: ${take_profit_price} (+25%) | Stop Loss: ${stop_loss_price} (-15%)")
 
         bracket_order_data = MarketOrderRequest(
             symbol=chosen_ticker,
@@ -292,26 +343,22 @@ for chosen_ticker in qualified_stocks:
         )
         
         submitted_order = alpaca_client.submit_order(order_data=bracket_order_data)
-        print(f"   Successfully placed! Order ID: {submitted_order.id}")
+        print(f"    Successfully placed! Order ID: {submitted_order.id}")
         
-        # Update local tracking variables after successful order
-        current_sector_counts[stock_sector] = existing_sector_count + 1
-        available_cash -= TARGET_ALLOCATION  # Approximate deduct
+        current_industry_counts[stock_industry] = existing_industry_count + 1
         
-        # Re-fetch live account balance to be precise
         account_refreshed = alpaca_client.get_account()
         available_cash = float(account_refreshed.cash)
         portfolio_val = float(account_refreshed.equity)
         
-        print(f"   💰 Remaining Cash: ${available_cash:,.2f}")
-        print(f"   📈 Total Portfolio Value: ${portfolio_val:,.2f}")
+        print(f"    💰 Remaining Cash: ${available_cash:,.2f}")
+        print(f"    📈 Total Portfolio Value: ${portfolio_val:,.2f}")
         
-        # Log to CSV
-        log_notes = f"Bought {shares_to_buy} shares in {stock_sector}. TP @ ${take_profit_price}, SL @ ${stop_loss_price}. Cash Left: ${available_cash:,.2f}"
+        log_notes = f"Bought {shares_to_buy} shares in {stock_industry}. TP @ ${take_profit_price}, SL @ ${stop_loss_price}."
         log_trade_decision(current_time, chosen_ticker, "N/A", "N/A", "N/A", "BRACKET_BUY", log_notes)
         
     except Exception as e:
-        print(f"   ❌ Order failed for {chosen_ticker}: {e}")
+        print(f"    ❌ Order failed for {chosen_ticker}: {e}")
         log_trade_decision(current_time, chosen_ticker, "N/A", "N/A", "N/A", "ERROR", f"Order failed: {e}")
 
 print("\nAll qualified orders processed!")

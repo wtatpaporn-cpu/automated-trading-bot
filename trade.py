@@ -147,7 +147,7 @@ for raw_ticker in watchlist:
         if not (current_price > sma_50 and distance_from_high <= BUY_MAX_DIST_HIGH):
             continue
 
-        # Gemini AI Evaluation with Rate-Limit Handling
+        # Gemini AI Evaluation (Skips immediately on rate limit instead of sleeping)
         prompt = f"""
         Evaluate this stock for an aggressive growth portfolio in 1 concise sentence:
         - Company: {company_name} ({ticker}) | Sector: {sector} / {industry}
@@ -155,27 +155,22 @@ for raw_ticker in watchlist:
         Is this a high-conviction innovation leader with strong secular tailwinds, and is its valuation justifiable?
         """
 
-        response = None
-        for attempt in range(3):
-            try:
-                response = ai_client.models.generate_content(
-                    model="gemini-3.8-flash",
-                    contents=prompt,
-                    config={
-                        "response_mime_type": "application/json",
-                        "response_schema": StockEvaluation,
-                    },
-                )
-                break
-            except Exception as api_err:
-                if "429" in str(api_err) or "RESOURCE_EXHAUSTED" in str(api_err):
-                    print(f"  ⚠️ Rate limit hit. Pausing 25s (Attempt {attempt+1}/3)...")
-                    time.sleep(25)
-                else:
-                    raise api_err
-
-        if not response:
-            raise Exception("API request failed after retries.")
+        try:
+            response = ai_client.models.generate_content(
+                model="gemini-3.8-flash",
+                contents=prompt,
+                config={
+                    "response_mime_type": "application/json",
+                    "response_schema": StockEvaluation,
+                },
+            )
+        except Exception as api_err:
+            if "429" in str(api_err) or "RESOURCE_EXHAUSTED" in str(api_err):
+                print(f"  ⚠️ [RATE LIMIT] Skipping {ticker} due to quota limit.")
+                log_trade_decision(current_time, raw_ticker, f"{forward_pe:.2f}", "N/A", f"{roe*100:.1f}%", "SKIPPED", "Rate Limit Hit")
+                continue
+            else:
+                raise api_err
 
         result_data = json.loads(response.text)
         is_passed = result_data["pass_stock"]
@@ -189,7 +184,7 @@ for raw_ticker in watchlist:
             print(f"  ❌ [REJECT] {ticker:<5} | {reason[:75]}...")
             log_trade_decision(current_time, raw_ticker, f"{forward_pe:.2f}", "N/A", f"{roe*100:.1f}%", "AI_REJECT", reason)
 
-        time.sleep(4.1)
+        time.sleep(0.5)  # Quick pacing
 
     except Exception as e:
         print(f"  ⚠️ [ERROR]  {raw_ticker}: {e}")

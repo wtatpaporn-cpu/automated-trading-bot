@@ -236,16 +236,3 @@ for p in alpaca_client.get_all_positions():
 for ind, positions in industry_positions.items():
     if len(positions) > MAX_STOCKS_PER_INDUSTRY:
         excess = len(positions) - MAX_STOCKS_PER_INDUSTRY
-        print(f"  ⚠️ Industry '{ind}' exceeds cap ({len(positions)}/{MAX_STOCKS_PER_INDUSTRY}). Pruning {excess}...")
-
-        for p, ticker in positions[-excess:]:
-            try:
-                for order in alpaca_client.get_orders(filter=GetOrdersRequest(status=QueryOrderStatus.OPEN, symbols=[ticker])):
-                    try: 
-                        alpaca_client.cancel_order_by_id(order.id)
-                    except: 
-                        pass
-                time.sleep(1.0)
-                alpaca_client.submit_order(order_data=MarketOrderRequest(symbol=ticker, qty=p.qty, side=OrderSide.SELL, time_in_force=TimeInForce.DAY))
-                print(f"    📉 Sold {ticker} (Industry Cap)")
-                log_trade_decision(current_time, ticker, "N/A", "N/A", "N/A", "

@@ -1,0 +1,73 @@
+Timestamp,Ticker,Forward P/E,P/B,ROE (%),Decision,Notes
+2026-11-14 20:06:01,AAPL,33.70,N/A,142.3%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,ABNB,29.58,N/A,35.8%,AI_PASS,"Airbnb exhibits exceptional financial returns, strong revenue growth, and operates as an established travel innovator with a reasonable forward P/E given its high ROE, making it suitable for an aggressive growth portfolio."
+2026-11-14 20:06:01,ADI,24.09,N/A,12.2%,AI_REJECT,"While revenue growth is strong, a modest ROE and premium valuation make it less ideal for an aggressive growth portfolio focused on high-conviction innovation leaders."
+2026-11-14 20:06:01,ADP,22.90,N/A,78.9%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,ADSK,18.62,N/A,53.9%,AI_PASS,"Autodesk qualifies as an aggressive growth holding due to robust revenue growth and an exceptional return on equity, paired with a reasonable forward P/E valuation for a software leader."
+2026-11-14 20:06:01,AEP,18.73,N/A,10.6%,AI_REJECT,"American Electric Power is a regulated utility lacking high-conviction innovation leadership and aggressive growth characteristics, making its valuation less compelling for an aggressive growth portfolio."
+2026-11-14 20:06:01,AMGN,18.59,N/A,78.4%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,AMZN,24.42,N/A,27.4%,AI_PASS,"Amazon is a high-conviction innovation leader benefiting from strong secular tailwinds in e-commerce and cloud computing, with a justifiable valuation given its robust ROE and revenue growth."
+2026-11-14 20:06:01,APP,19.61,N/A,210.1%,AI_PASS,"Applovin demonstrates exceptional revenue growth, massive ROE, and a reasonable forward P/E, making it a high-conviction growth play."
+2026-11-14 20:06:01,AVGO,17.83,N/A,44.2%,AI_PASS,"Broadcom exhibits exceptional revenue growth and superior return on equity driven by strong semiconductor and AI tailwinds, making its reasonable forward P/E justifiable for an aggressive growth portfolio."
+2026-11-14 20:06:01,AXON,33.40,N/A,7.6%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,BKNG,N/A,N/A,N/A,REJECTED,Missing Data
+2026-11-14 20:06:01,CCEP,21.39,N/A,23.5%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,CDNS,32.81,N/A,22.9%,AI_PASS,"Cadence Design Systems exhibits robust revenue growth and strong profitability in electronic design automation, making its premium valuation justifiable for an aggressive growth portfolio."
+2026-11-14 20:06:01,CEG,20.85,N/A,18.3%,AI_PASS,"Constellation Energy benefits from immense secular tailwinds driven by rising data center power demand and clean energy commitments, making its premium valuation justifiable for aggressive growth."
+2026-11-14 20:06:01,CMCSA,7.14,N/A,11.4%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,COST,44.18,N/A,28.4%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,CPRT,17.59,N/A,16.2%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,CRWD,140.72,N/A,1.5%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,CRWV,-29.97,N/A,-63.9%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,CSX,22.21,N/A,26.4%,AI_REJECT,"CSX Corporation is an established railroad company in the industrials sector lacking high-conviction innovation leadership and secular tailwinds characteristic of aggressive growth portfolios, despite solid profitability."
+2026-11-14 20:06:01,CTAS,36.72,N/A,41.4%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,DDOG,57.86,N/A,6.4%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,DXCM,26.58,N/A,37.7%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,EXC,15.25,N/A,9.1%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,FANG,8.49,N/A,4.9%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,FAST,39.00,N/A,35.3%,AI_REJECT,"Despite solid profitability and revenue growth, Fastenal operates in a traditional industrial distribution sector rather than disruptive innovation, making its high forward P/E of nearly 39 difficult to justify for an aggressive growth portfolio."
+2026-11-14 20:06:01,FER,43.87,N/A,11.6%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,GEHC,15.09,N/A,20.0%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,GILD,16.60,N/A,-22.4%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,HON,22.53,N/A,44.4%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,HONA,N/A,N/A,N/A,REJECTED,Missing Data
+2026-11-14 20:06:01,IDXX,41.69,N/A,68.9%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,INTC,33.32,N/A,-9.6%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,INTU,12.70,N/A,23.6%,AI_PASS,"Intuit combines solid 13.7% revenue growth and a strong 23.6% ROE with a reasonable forward P/E of 12.7, making it a viable software leader for an aggressive growth portfolio."
+2026-11-14 20:06:01,ISRG,35.58,N/A,17.9%,AI_PASS,Intuitive Surgical dominates robotic-assisted surgery with exceptional revenue growth and secular healthcare tailwinds that justify its premium forward P/E for an aggressive growth portfolio.
+2026-11-14 20:06:01,KDP,14.36,N/A,6.0%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,LIN,26.91,N/A,17.7%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,LITE,14.87,N/A,-245.8%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,MAR,N/A,N/A,N/A,REJECTED,Missing Data
+2026-11-14 20:06:01,MDLZ,20.08,N/A,15.5%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,MNST,35.67,N/A,24.7%,AI_PASS,"Monster Beverage exhibits strong revenue growth and high return on equity supported by secular tailwinds in the energy drink sector, making its premium valuation justifiable for an aggressive growth portfolio."
+2026-11-14 20:06:01,MPWR,29.81,N/A,24.5%,AI_PASS,"MPWR exhibits exceptional revenue growth and strong profitability in a key semiconductor growth market, making its premium valuation justifiable for an aggressive portfolio."
+2026-11-14 20:06:01,MRNA,-51.74,N/A,-34.5%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,MSFT,21.66,N/A,34.2%,AI_PASS,Microsoft is a high-conviction leader in cloud computing and AI with strong revenue growth and a justifiable forward P/E valuation for an aggressive growth portfolio.
+2026-11-14 20:06:01,MSTR,6.47,N/A,-21.6%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,NBIS,-40.19,N/A,1.5%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,NFLX,16.48,N/A,53.5%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,NXPI,14.45,N/A,28.7%,AI_PASS,"NXPI features strong profitability with a 28.7% ROE and robust 19.3% revenue growth paired with an attractive 14.4 forward P/E, making it a compelling, reasonably valued play on automotive and industrial secular tailwinds for an aggressive growth portfolio."
+2026-11-14 20:06:01,ORLY,N/A,N/A,N/A,REJECTED,Missing Data
+2026-11-14 20:06:01,PANW,65.98,N/A,1.7%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,PAYX,18.11,N/A,47.1%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,PDD,6.39,N/A,22.7%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,PEP,16.87,N/A,52.2%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,PYPL,10.04,N/A,23.8%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,QCOM,14.13,N/A,52.8%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,REGN,13.49,N/A,14.9%,AI_PASS,"Regeneron demonstrates exceptional revenue growth, robust profitability, and a reasonable valuation, making it a strong candidate for an aggressive growth portfolio."
+2026-11-14 20:06:01,RKLB,859.60,N/A,-6.4%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,ROP,19.53,N/A,13.2%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,ROST,25.66,N/A,42.6%,AI_REJECT,"While Ross Stores exhibits strong ROE and revenue growth, it operates as a mature off-price retailer rather than a high-conviction innovation leader, making a 25.6x forward P/E difficult to justify for an aggressive growth strategy."
+2026-11-14 20:06:01,SBUX,N/A,N/A,N/A,REJECTED,Missing Data
+2026-11-14 20:06:01,SNPS,24.41,N/A,3.7%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,SPCX,N/A,N/A,N/A,REJECTED,Missing Data
+2026-11-14 20:06:01,TMUS,11.92,N/A,19.4%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,TRI,23.22,N/A,14.1%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,TSLA,180.72,N/A,3.8%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,TTWO,22.33,N/A,-6.8%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,TXN,26.10,N/A,39.7%,AI_REJECT,"Texas Instruments is a solid semiconductor business, but its slower revenue growth relative to pure-play AI innovators and elevated valuation make it less suitable for an aggressive growth portfolio."
+2026-11-14 20:06:01,VRTX,27.04,N/A,20.8%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,WDAY,14.83,N/A,16.0%,AI_PASS,Workday combines strong cloud software secular tailwinds and solid profitability with an attractive valuation for an aggressive growth portfolio.
+2026-11-14 20:06:01,WMT,39.76,N/A,22.3%,REJECTED,Failed Pre-Screen
+2026-11-14 20:06:01,XEL,17.86,N/A,11.4%,REJECTED,Failed Pre-Screen

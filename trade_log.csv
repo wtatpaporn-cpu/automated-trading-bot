@@ -1,0 +1,86 @@
+Timestamp,Ticker,Forward P/E,ROE (%),Decision,Notes
+2026-11-14 20:45:48,AAPL,33.70,142.3%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,ABNB,29.58,35.8%,AI_PASS,"Airbnb demonstrates strong fundamentals with a healthy P/E ratio, a high Return on Equity (ROE) of 35.8%, and robust revenue growth of 18.9%, indicating solid market leadership and innovation."
+2026-11-14 20:45:48,ADI,24.09,12.2%,AI_PASS,"Analog Devices, Inc. (ADI) demonstrates solid fundamentals with a strong revenue growth of 39.6%, a healthy ROE of 12.2%, and a reasonable P/E ratio of 24.09, positioning it as a strong contender in the innovation and semiconductor space."
+2026-11-14 20:45:48,ADP,22.90,78.9%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,ADSK,18.62,53.9%,AI_PASS,"Autodesk demonstrates strong financial health with a high ROE of 53.9% and robust revenue growth of 16.1%, paired with a reasonable P/E ratio of 18.62, qualifying it as a strong candidate."
+2026-11-14 20:45:48,AEP,18.73,10.6%,AI_REJECT,"American Electric Power Company is a regulated electric utility rather than a high-conviction innovation leader, typically characterized by stable utility growth and traditional infrastructure rather than disruptive technological innovation."
+2026-11-14 20:45:48,AMGN,18.59,78.4%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,AMZN,24.42,27.4%,AI_PASS,"Amazon exhibits strong fundamentals with a high Return on Equity of 27.4% and solid revenue growth of 12.1%, while maintaining a reasonable valuation P/E of 24.4, affirming its status as a high-conviction innovation leader."
+2026-11-14 20:45:48,APP,19.61,210.1%,AI_PASS,"Applovin demonstrates exceptional fundamentals with a very high return on equity (210.1%), strong revenue growth of 55.5%, and a reasonable P/E ratio of 19.61, indicating strong innovation and operational efficiency."
+2026-11-14 20:45:48,AVGO,17.83,44.2%,AI_PASS,"Broadcom displays strong financial metrics with exceptional revenue growth and high return on equity, combined with a reasonable P/E ratio, making it a solid candidate for innovation leadership."
+2026-11-14 20:45:48,AXON,33.40,7.6%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,BKNG,N/A,N/A,REJECTED,Missing Data
+2026-11-14 20:45:48,CCEP,21.39,23.5%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,CDNS,32.81,22.9%,AI_PASS,"Cadence Design Systems demonstrates strong financial fundamentals with a solid ROE of 22.9% and robust revenue growth of 22.0%. Although the P/E ratio of 32.81 is relatively high, it is justified by the company's established leadership in electronic design automation (EDA) and consistent innovation in semiconductor design."
+2026-11-14 20:45:48,CEG,20.85,18.3%,AI_PASS,"Constellation Energy Corporation (CEG) demonstrates robust financial health with strong revenue growth of 45.4% and a solid Return on Equity (ROE) of 18.3%, paired with a reasonable P/E ratio of 20.85, positioning it as a strong contender in the energy innovation sector."
+2026-11-14 20:45:48,CMCSA,7.14,11.4%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,COST,44.18,28.4%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,CPRT,17.59,16.2%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,CRWD,140.72,1.5%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,CRWV,-29.97,-63.9%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,CSX,22.21,26.4%,AI_REJECT,"While CSX Corporation has a solid ROE of 26.4% and positive revenue growth, its status as a traditional railroad company does not align with the profile of a high-conviction innovation leader."
+2026-11-14 20:45:48,CTAS,36.72,41.4%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,DDOG,57.86,6.4%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,DXCM,26.58,37.7%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,EXC,15.25,9.1%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,FANG,8.49,4.9%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,FAST,39.00,35.3%,AI_REJECT,"While Fastenal Company (FAST) boasts an exceptional ROE of 35.3% and solid revenue growth of 15.5%, its P/E ratio of nearly 39 is very high for a traditional industrial distributor. While it uses vending and supply-chain tech effectively, it does not fit the profile of a high-conviction, high-margin disruptive technology innovation leader."
+2026-11-14 20:45:48,FER,43.87,11.6%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,GEHC,15.09,20.0%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,GILD,16.60,-22.4%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,HON,22.53,44.4%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,HONA,N/A,N/A,REJECTED,Missing Data
+2026-11-14 20:45:48,IDXX,41.69,68.9%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,INTC,33.32,-9.6%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,INTU,12.70,23.6%,AI_REJECT,"While Intuit has strong ROE and revenue growth, its P/E ratio of 12.7 is unusually low for a high-conviction innovation leader, suggesting market skepticism or cyclicality, and does not align with typical premium valuations for top-tier tech innovators."
+2026-11-14 20:45:48,ISRG,35.58,17.9%,AI_PASS,"Intuitive Surgical demonstrates strong top-line revenue growth above 20% and a healthy ROE of 17.9%, combined with its established market leadership in robotic-assisted surgery, making it a compelling innovation leader despite a high P/E valuation."
+2026-11-14 20:45:48,KDP,14.36,6.0%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,LIN,26.91,17.7%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,LITE,14.87,-245.8%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,MAR,N/A,N/A,REJECTED,Missing Data
+2026-11-14 20:45:48,MDLZ,20.08,15.5%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,MNST,35.67,24.7%,AI_PASS,"Monster Beverage Corporation exhibits strong financial health with high return on equity (24.7%) and robust revenue growth (16.7%), supporting its position as a strong innovation leader in the beverage sector despite a relatively high P/E ratio of 35.67."
+2026-11-14 20:45:48,MPWR,29.81,24.5%,AI_PASS,"Monolithic Power Systems, Inc. demonstrates exceptional fundamentals with extremely strong revenue growth of 63.1%, a robust ROE of 24.5%, and a reasonable P/E ratio given its hyper-growth profile, positioning it as a high-conviction innovation leader in the semiconductor space."
+2026-11-14 20:45:48,MRNA,-51.74,-34.5%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,MSFT,21.66,34.2%,AI_PASS,"Microsoft demonstrates strong financial health with a solid return on equity of 34.2 percent and healthy revenue growth of 18.8 percent, supported by a reasonable P/E ratio given its position as a leading technology innovator."
+2026-11-14 20:45:48,MSTR,6.47,-21.6%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,NBIS,-40.19,1.5%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,NFLX,16.48,53.5%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,NXPI,14.45,28.7%,AI_PASS,"NXP Semiconductors N.V. demonstrates strong fundamentals with a healthy P/E ratio of 14.45, a high ROE of 28.7%, and solid revenue growth of 19.3%, aligning with the criteria for a high-conviction innovation leader."
+2026-11-14 20:45:48,ORLY,N/A,N/A,REJECTED,Missing Data
+2026-11-14 20:45:48,PANW,65.98,1.7%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,PAYX,18.11,47.1%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,PDD,6.39,22.7%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,PEP,16.87,52.2%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,PYPL,10.04,23.8%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,QCOM,14.13,52.8%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,REGN,13.49,14.9%,AI_PASS,"Regeneron Pharmaceuticals exhibits strong financial health with a solid P/E ratio of 13.49, a healthy ROE of 14.9%, and exceptional revenue growth of 36.3%, positioning it as a high-conviction innovation leader in the biotech sector."
+2026-11-14 20:45:48,RKLB,859.60,-6.4%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,ROP,19.53,13.2%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,ROST,25.66,42.6%,AI_REJECT,"Ross Stores operates as an off-price apparel and home fashion retailer, which is a mature and traditional retail business model rather than an innovation leader, despite solid financial metrics like a 42.6% ROE."
+2026-11-14 20:45:48,SBUX,N/A,N/A,REJECTED,Missing Data
+2026-11-14 20:45:48,SNPS,24.41,3.7%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,SPCX,N/A,N/A,REJECTED,Missing Data
+2026-11-14 20:45:48,TMUS,11.92,19.4%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,TRI,23.22,14.1%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,TSLA,180.72,3.8%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,TTWO,22.33,-6.8%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,TXN,26.10,39.7%,AI_REJECT,"Texas Instruments Incorporated (TXN) has a P/E ratio of 26.1 and a solid ROE of 39.7%, but its revenue growth of 27.7% does not consistently reflect the top-tier hyper-growth associated with high-conviction innovation leaders in emerging technological domains."
+2026-11-14 20:45:48,VRTX,27.04,20.8%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,WDAY,14.83,16.0%,AI_REJECT,"While Workday has decent ROE and revenue growth, its current P/E of 14.83 indicates a value/mature profile rather than a high-conviction hyper-growth innovation leader with premium valuation multiples typical of top disruptive tech."
+2026-11-14 20:45:48,WMT,39.76,22.3%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,XEL,17.86,11.4%,REJECTED,Failed Pre-Screen
+2026-11-14 20:45:48,ABNB,N/A,N/A,BUY,"Bought 3 whole shares. TP: 233.47, SL: 158.76"
+2026-11-14 20:45:48,ADI,N/A,N/A,BUY,"Bought 1 whole shares. TP: 497.46, SL: 338.27"
+2026-11-14 20:45:48,ADSK,N/A,N/A,BUY,"Bought 2 whole shares. TP: 330.53, SL: 224.76"
+2026-11-14 20:45:48,AMZN,N/A,N/A,BUY,"Bought 2 whole shares. TP: 333.33, SL: 226.66"
+2026-11-14 20:45:48,APP,N/A,N/A,BUY,"Bought 1 whole shares. TP: 511.38, SL: 347.74"
+2026-11-14 20:45:48,AVGO,N/A,N/A,BUY,"Bought 1 whole shares. TP: 433.76, SL: 294.96"
+2026-11-14 20:45:48,CDNS,N/A,N/A,BUY,"Bought 2 whole shares. TP: 403.76, SL: 274.56"
+2026-11-14 20:45:48,CEG,N/A,N/A,BUY,"Bought 2 whole shares. TP: 350.25, SL: 238.17"
+2026-11-14 20:45:48,ISRG,N/A,N/A,BUY,"Bought 1 whole shares. TP: 554.49, SL: 377.05"
+2026-11-14 20:45:48,MNST,N/A,N/A,BUY,"Bought 11 whole shares. TP: 58.07, SL: 39.49"
+2026-11-14 20:45:48,MPWR,N/A,N/A,BUY,"Bought 1 whole shares. TP: 1738.18, SL: 1181.96"
+2026-11-14 20:45:48,MSFT,N/A,N/A,BUY,"Bought 1 whole shares. TP: 654.85, SL: 445.3"
+2026-11-14 20:45:48,REGN,N/A,N/A,BUY,"Bought 1 whole shares. TP: 1194.34, SL: 812.15"

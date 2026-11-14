@@ -159,7 +159,7 @@ for raw_ticker in watchlist:
         for attempt in range(3):
             try:
                 response = ai_client.models.generate_content(
-                    model="gemini-3.5-flash-lite",
+                    model="gemini-3.8-flash",
                     contents=prompt,
                     config={
                         "response_mime_type": "application/json",
@@ -207,12 +207,17 @@ try:
     account = alpaca_client.get_account()
     available_cash = float(account.cash)
 
-    for p in alpaca_client.get_all_positions():
+    positions = alpaca_client.get_all_positions()
+    for p in positions:
         pos_ticker = p.symbol.replace(".", "-")
-        pos_ind = yf.Ticker(pos_ticker).info.get("industry", "Unknown")
+        pos_ind = "Unknown"
+        try:
+            pos_ind = yf.Ticker(pos_ticker).info.get("industry", "Unknown")
+        except Exception:
+            pass
         current_industry_counts[pos_ind] = current_industry_counts.get(pos_ind, 0) + 1
 
-    print(f"💰 Cash: ${available_cash:,.2f} | Industries: {len(current_industry_counts)} tracked")
+    print(f"💰 Cash: ${available_cash:,.2f} | Open Positions: {len(positions)} | Industries: {len(current_industry_counts)} tracked")
 except Exception as e:
     print(f"⚠️ Account fetch error: {e}")
     exit()
@@ -223,16 +228,162 @@ except Exception as e:
 # ==========================================
 print("\nAuditing portfolio...")
 
-industry_positions = {}
-for p in alpaca_client.get_all_positions():
-    pos_ticker = p.symbol.replace(".", "-")
-    try:
-        pos_ind = yf.Ticker(pos_ticker).info.get("industry", "Unknown")
-    except:
-        pos_ind = "Unknown"
-    industry_positions.setdefault(pos_ind, []).append((p, pos_ticker))
+open_positions = alpaca_client.get_all_positions()
+print(f"  ℹ️ Inspecting {len(open_positions)} open position(s)...")
 
-# Enforce Industry Caps
-for ind, positions in industry_positions.items():
-    if len(positions) > MAX_STOCKS_PER_INDUSTRY:
-        excess = len(positions) - MAX_STOCKS_PER_INDUSTRY
+if not open_positions:
+    print("  ℹ️ Portfolio is empty. Skipping rebalance/prune checks.")
+else:
+    industry_positions = {}
+    for p in open_positions:
+        pos_ticker = p.symbol.replace(".", "-")
+        pos_ind = "Unknown"
+        try:
+            pos_ind = yf.Ticker(pos_ticker).info.get("industry", "Unknown")
+        except Exception:
+            pass
+        industry_positions.setdefault(pos_ind, []).append((p, pos_ticker))
+
+    # Enforce Industry Caps
+    for ind, positions in industry_positions.items():
+        if len(positions) > MAX_STOCKS_PER_INDUSTRY:
+            excess = len(positions) - MAX_STOCKS_PER_INDUSTRY
+            print(f"  ⚠️ Industry '{ind}' exceeds cap ({len(positions)}/{MAX_STOCKS_PER_INDUSTRY}). Pruning {excess}...")
+
+            for p, ticker in positions[-excess:]:
+                try:
+                    for order in alpaca_client.get_orders(filter=GetOrdersRequest(status=QueryOrderStatus.OPEN, symbols=[ticker])):
+                        try: 
+                            alpaca_client.cancel_order_by_id(order.id)
+                        except: 
+                            pass
+                    time.sleep(1.0)
+                    alpaca_client.submit_order(order_data=MarketOrderRequest(symbol=ticker, qty=p.qty, side=OrderSide.SELL, time_in_force=TimeInForce.DAY))
+                    print(f"    📉 Sold {ticker} (Industry Cap)")
+                    log_trade_decision(current_time, ticker, "N/A", "N/A", "N/A", "PRUNE_SELL", f"Cap exceeded for {ind}")
+                except Exception as e:
+                    print(f"    ❌ Failed to sell {ticker}: {e}")
+
+    # Hold Audit
+    for p in open_positions:
+        pos_ticker = p.symbol.replace(".", "-")
+        try:
+            stock_obj = yf.Ticker(pos_ticker)
+            rev_growth = 0
+            try:
+                rev_growth = stock_obj.info.get("revenueGrowth", 0) or 0
+            except Exception:
+                pass
+                
+            df_pos = stock_obj.history(period="60d")
+            uptrend = (df_pos["Close"].iloc[-1] > df_pos["Close"].rolling(window=50).mean().iloc[-1]) if len(df_pos) >= 50 else True
+
+            if not ((rev_growth >= SELL_MIN_REV_GROWTH) and uptrend):
+                print(f"  📉 Selling {pos_ticker} (Failed growth/trend audit)")
+                for order in alpaca_client.get_orders(filter=GetOrdersRequest(status=QueryOrderStatus.OPEN, symbols=[pos_ticker])):
+                    try: 
+                        alpaca_client.cancel_order_by_id(order.id)
+                    except: 
+                        pass
+                time.sleep(1.0)
+                alpaca_client.submit_order(order_data=MarketOrderRequest(symbol=p.symbol, qty=p.qty, side=OrderSide.SELL, time_in_force=TimeInForce.DAY))
+                log_trade_decision(current_time, pos_ticker, "N/A", "N/A", "N/A", "FILTER_SELL", "Audit failed")
+        except Exception as e:
+            pass
+
+# Refresh cash
+try:
+    account_refreshed = alpaca_client.get_account()
+    available_cash = float(account_refreshed.cash)
+    print(f"💰 Post-Audit Cash: ${available_cash:,.2f}")
+except Exception as e:
+    print(f"⚠️ Cash refresh warning: {e}")
+
+
+# ==========================================
+# 8. EXECUTE ORDERS & SUMMARY REPORT
+# ==========================================
+if not qualified_stocks:
+    print("No stocks passed filters. Exiting.")
+    exit()
+
+print(f"\nPlacing orders...")
+
+trades_executed_count = 0
+
+for chosen_ticker in qualified_stocks:
+    if available_cash < TARGET_ALLOCATION:
+        print(f"❌ Stop: Insufficient cash (${available_cash:,.2f}) for target (${TARGET_ALLOCATION:,.2f}).")
+        break
+
+    try:
+        stock_obj = yf.Ticker(chosen_ticker)
+        stock_industry = "Unknown"
+        try:
+            stock_industry = stock_obj.info.get("industry", "Unknown")
+        except Exception:
+            pass
+
+        existing_count = current_industry_counts.get(stock_industry, 0)
+        if existing_count >= MAX_STOCKS_PER_INDUSTRY:
+            print(f"  🚫 Skipping {chosen_ticker}: Industry cap reached.")
+            continue
+
+        current_price = stock_obj.history(period="1d")["Close"].iloc[-1]
+        shares_to_buy = round(TARGET_ALLOCATION / current_price, 4)
+        is_fractional = not shares_to_buy.is_integer()
+
+        if is_fractional:
+            order_data = MarketOrderRequest(
+                symbol=chosen_ticker, qty=shares_to_buy, side=OrderSide.BUY,
+                time_in_force=TimeInForce.DAY, order_class=OrderClass.SIMPLE
+            )
+            print(f"  -> Buying ~{shares_to_buy} shares of {chosen_ticker} @ ${current_price:.2f} (Simple)")
+            log_notes = f"Bought {shares_to_buy} fractional shares."
+        else:
+            tp = round(current_price * (1 + TAKE_PROFIT_PCT), 2)
+            sl = round(current_price * (1 - STOP_LOSS_PCT), 2)
+            order_data = MarketOrderRequest(
+                symbol=chosen_ticker, qty=int(shares_to_buy), side=OrderSide.BUY,
+                time_in_force=TimeInForce.DAY, order_class=OrderClass.BRACKET,
+                take_profit=TakeProfitRequest(limit_price=tp),
+                stop_loss=StopLossRequest(stop_price=sl),
+            )
+            print(f"  -> Buying {int(shares_to_buy)} shares of {chosen_ticker} @ ${current_price:.2f} [TP: ${tp} | SL: ${sl}]")
+            log_notes = f"Bought {int(shares_to_buy)} whole shares. TP @ ${tp}, SL @ ${sl}."
+
+        submitted = alpaca_client.submit_order(order_data=order_data)
+        print(f"     Success! ID: {submitted.id[:8]}...")
+
+        trades_executed_count += 1
+        current_industry_counts[stock_industry] = existing_count + 1
+        
+        account_refreshed = alpaca_client.get_account()
+        available_cash = float(account_refreshed.cash)
+        log_trade_decision(current_time, chosen_ticker, "N/A", "N/A", "N/A", "BUY", log_notes)
+
+    except Exception as e:
+        print(f"  ❌ Order failed for {chosen_ticker}: {e}")
+        log_trade_decision(current_time, chosen_ticker, "N/A", "N/A", "N/A", "ERROR", str(e))
+
+# ==========================================
+# 9. FINAL EXECUTION SUMMARY REPORT
+# ==========================================
+try:
+    final_account = alpaca_client.get_account()
+    final_equity = float(final_account.equity)
+    final_cash = float(final_account.cash)
+except Exception:
+    final_equity = 0.0
+    final_cash = available_cash
+
+print("\n" + "="*40)
+print("📊 TRADING BOT EXECUTION SUMMARY")
+print("="*40)
+print(f"  • Stocks Screened:     {len(watchlist)}")
+print(f"  • Stocks Approved:     {len(qualified_stocks)}")
+print(f"  • Trades Executed:     {trades_executed_count}")
+print(f"  • Ending Cash:         ${final_cash:,.2f}")
+print(f"  • Total Portfolio Eq:  ${final_equity:,.2f}")
+print("="*40)
+print("All tasks completed successfully!")

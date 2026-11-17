@@ -171,3 +171,78 @@ Timestamp,Ticker,Forward P/E,ROE (%),Decision,Notes
 2026-11-16 16:22:05,MSFT,N/A,N/A,BUY,"Bought 1 whole shares. TP: 655.85, SL: 445.98"
 2026-11-16 16:22:05,NXPI,N/A,N/A,BUY,"Bought 2 whole shares. TP: 325.91, SL: 221.62"
 2026-11-16 16:22:05,REGN,N/A,N/A,BUY,"Bought 1 whole shares. TP: 1202.61, SL: 817.78"
+2026-11-17 15:23:30,AAPL,33.49,142.3%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,ABNB,29.25,35.8%,AI_PASS,"Airbnb demonstrates strong fundamentals with a high Return on Equity (35.8%) and robust revenue growth (18.9%), paired with a reasonable P/E ratio for its growth profile, establishing it as a leader in the travel technology sector."
+2026-11-17 15:23:30,ADP,22.97,78.9%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,ADSK,18.24,53.9%,AI_PASS,"Autodesk exhibits a strong ROE of 53.9% and healthy revenue growth of 16.1%, paired with a reasonable P/E ratio, indicating a strong innovation leader in the software sector."
+2026-11-17 15:23:30,AEP,18.67,10.6%,AI_REJECT,"While American Electric Power Company has a solid ROE and revenue growth, utility companies generally do not fit the profile of high-conviction innovation leaders in technology or disruptive sectors."
+2026-11-17 15:23:30,AMGN,18.32,78.4%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,AMZN,23.69,27.4%,AI_PASS,"Amazon demonstrates strong revenue growth, a solid return on equity, and a reasonable P/E ratio, reinforcing its position as a high-conviction innovation and e-commerce/cloud leader."
+2026-11-17 15:23:30,APP,19.15,210.1%,AI_PASS,"Applovin demonstrates exceptional financial metrics with an extremely high ROE of 210.1% and robust revenue growth of 55.5%, supported by a reasonable P/E ratio of 19.15, signaling strong market leadership and operational efficiency in the innovation sector."
+2026-11-17 15:23:30,AXON,31.90,7.6%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,BKNG,N/A,N/A,REJECTED,Missing Data
+2026-11-17 15:23:30,CCEP,21.47,23.5%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,CEG,20.42,18.3%,AI_PASS,"Constellation Energy Corporation demonstrates strong financial metrics with a competitive ROE of 18.3%, robust revenue growth of 45.4%, and a reasonable P/E ratio of 20.42, positioning it as a strong player in the energy sector."
+2026-11-17 15:23:30,CMCSA,7.30,11.4%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,COST,44.57,28.4%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,CPRT,18.05,16.2%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,CRWD,134.83,1.5%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,CRWV,-28.24,-63.9%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,CSX,21.94,26.4%,AI_REJECT,"CSX Corporation operates in the traditional railroad transportation sector, which, while financially stable with a strong ROE, does not represent a high-conviction innovation leader characterized by disruptive technology or rapid high-margin scaling."
+2026-11-17 15:23:30,CTAS,36.38,41.4%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,DDOG,51.83,6.4%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,DXCM,26.50,37.7%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,EXC,15.31,9.1%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,FANG,8.29,4.9%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,FAST,38.94,35.3%,AI_REJECT,"While Fastenal has strong profitability with an ROE of 35.3% and solid revenue growth of 15.5%, its P/E ratio of 38.94 is quite high. Furthermore, Fastenal is primarily an industrial distributor of fasteners and safety supplies rather than a high-conviction innovation leader in emerging tech or disruptive sectors."
+2026-11-17 15:23:30,FER,43.70,11.6%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,GEHC,15.17,20.0%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,GILD,16.75,-22.4%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,HON,22.25,44.4%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,HONA,N/A,N/A,REJECTED,Missing Data
+2026-11-17 15:23:30,IDXX,41.75,68.9%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,INTC,30.68,-9.6%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,ISRG,35.16,17.9%,AI_PASS,"Intuitive Surgical demonstrates strong characteristics of a high-conviction innovation leader with robust revenue growth of 21.7% and a solid return on equity of 17.9%, justifying its higher P/E multiple of 35.16 due to its dominant market position in robotic-assisted surgery."
+2026-11-17 15:23:30,KDP,13.94,6.0%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,LIN,26.77,17.7%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,LITE,13.93,-245.8%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,MAR,N/A,N/A,REJECTED,Missing Data
+2026-11-17 15:23:30,MDLZ,20.03,15.5%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,MNST,34.75,24.7%,AI_PASS,"Monster Beverage Corporation demonstrates strong profitability with a ROE of 24.7% and robust revenue growth of 16.7%, reflecting its leadership position in the high-growth functional beverage market despite a higher P/E ratio."
+2026-11-17 15:23:30,MPWR,28.81,24.5%,AI_PASS,"Monolithic Power Systems exhibits strong revenue growth exceeding 60 percent, a solid return on equity of 24.5 percent, and a reasonable valuation multiple for an innovation leader in the semiconductor and power management space."
+2026-11-17 15:23:30,MRNA,-49.81,-34.5%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,MSTR,5.95,-21.6%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,NBIS,-36.19,1.5%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,NFLX,16.09,53.5%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,NXPI,13.90,28.7%,AI_PASS,"NXP Semiconductors demonstrates solid profitability with a strong ROE of 28.7%, healthy revenue growth of 19.3%, and a reasonable valuation of 13.9x P/E, indicating it is an attractive candidate meeting value and growth criteria."
+2026-11-17 15:23:30,ORLY,N/A,N/A,REJECTED,Missing Data
+2026-11-17 15:23:30,PANW,62.26,1.7%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,PAYX,18.25,47.1%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,PDD,6.35,22.7%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,PEP,16.63,52.2%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,PYPL,10.01,23.8%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,QCOM,13.66,52.8%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,REGN,13.49,14.9%,AI_PASS,"Regeneron demonstrates exceptional fundamentals with a very strong revenue growth of 36.3%, a solid return on equity of 14.9%, and an attractive valuation P/E of 13.49, indicating strong innovation and financial health."
+2026-11-17 15:23:30,RKLB,783.60,-6.4%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,ROP,19.39,13.2%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,SBUX,N/A,N/A,REJECTED,Missing Data
+2026-11-17 15:23:30,SNPS,23.33,3.7%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,SPCX,N/A,N/A,REJECTED,Missing Data
+2026-11-17 15:23:30,TMUS,12.17,19.4%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,TRI,22.38,14.1%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,TSLA,176.73,3.8%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,TTWO,20.68,-6.8%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,VRTX,26.71,20.8%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,WMT,39.73,22.3%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,XEL,17.75,11.4%,REJECTED,Failed Pre-Screen
+2026-11-17 15:23:30,ADBE,N/A,N/A,SELL,Rebalance / Audit fail
+2026-11-17 15:23:30,MSFT,N/A,N/A,SELL,Rebalance / Audit fail
+2026-11-17 15:23:30,ABNB,N/A,N/A,BUY,"Bought 3 whole shares. TP: 232.22, SL: 157.91"
+2026-11-17 15:23:30,ADSK,N/A,N/A,BUY,"Bought 2 whole shares. TP: 323.55, SL: 220.01"
+2026-11-17 15:23:30,AMZN,N/A,N/A,BUY,"Bought 2 whole shares. TP: 323.39, SL: 219.91"
+2026-11-17 15:23:30,APP,N/A,N/A,BUY,"Bought 1 whole shares. TP: 497.16, SL: 338.07"
+2026-11-17 15:23:30,CEG,N/A,N/A,BUY,"Bought 2 whole shares. TP: 342.84, SL: 233.13"
+2026-11-17 15:23:30,ISRG,N/A,N/A,BUY,"Bought 1 whole shares. TP: 547.5, SL: 372.3"
+2026-11-17 15:23:30,MNST,N/A,N/A,BUY,"Bought 11 whole shares. TP: 56.46, SL: 38.39"
+2026-11-17 15:23:30,MPWR,N/A,N/A,BUY,"Bought 1 whole shares. TP: 1681.25, SL: 1143.25"
+2026-11-17 15:23:30,REGN,N/A,N/A,BUY,"Bought 1 whole shares. TP: 1199.51, SL: 815.67"

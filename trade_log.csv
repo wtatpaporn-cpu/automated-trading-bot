@@ -246,3 +246,71 @@ Timestamp,Ticker,Forward P/E,ROE (%),Decision,Notes
 2026-11-17 15:23:30,MNST,N/A,N/A,BUY,"Bought 11 whole shares. TP: 56.46, SL: 38.39"
 2026-11-17 15:23:30,MPWR,N/A,N/A,BUY,"Bought 1 whole shares. TP: 1681.25, SL: 1143.25"
 2026-11-17 15:23:30,REGN,N/A,N/A,BUY,"Bought 1 whole shares. TP: 1199.51, SL: 815.67"
+2026-11-18 15:26:03,AAPL,33.45,142.3%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,ABNB,28.39,35.8%,AI_PASS,"Airbnb demonstrates strong fundamentals with a solid ROE of 35.8% and robust revenue growth of 18.9%, trading at a reasonable P/E of 28.39 given its market leadership and innovation in the travel sector."
+2026-11-18 15:26:03,ADP,22.66,78.9%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,AEP,18.28,10.6%,AI_REJECT,"American Electric Power Company (AEP) operates in the regulated utility sector, which typically exhibits steady dividend yields and moderate growth rather than the high-growth innovation leadership characteristics required by this screen."
+2026-11-18 15:26:03,AMGN,17.96,78.4%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,AMZN,24.20,27.4%,AI_PASS,"Amazon demonstrates strong financial metrics with a high ROE of 27.4% and solid revenue growth of 12.1%, while maintaining a reasonable P/E ratio of 24.2 for a dominant innovation leader in cloud computing and e-commerce."
+2026-11-18 15:26:03,APP,18.95,210.1%,AI_PASS,"Applovin Corporation demonstrates exceptionally high revenue growth (55.5%) and an extraordinary ROE (210.1%), indicating dominant market positioning and strong capital efficiency within the innovation sector despite a moderate valuation."
+2026-11-18 15:26:03,AVGO,18.23,44.2%,AI_PASS,"Broadcom Inc. exhibits exceptional innovation leadership driven by stellar revenue growth of 85.5%, a strong Return on Equity of 44.2%, and a reasonable valuation with a P/E ratio of 18.23."
+2026-11-18 15:26:03,AXON,31.46,7.6%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,BKNG,N/A,N/A,REJECTED,Missing Data
+2026-11-18 15:26:03,CCEP,21.33,23.5%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,CMCSA,7.15,11.4%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,COST,44.19,28.4%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,CPRT,17.67,16.2%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,CRWD,143.22,1.5%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,CRWV,-26.68,-63.9%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,CSX,21.96,26.4%,AI_REJECT,"CSX Corporation operates in the traditional railroad transportation sector rather than high-growth innovation markets. While it has a solid ROE of 26.4%, its revenue growth of 12.0% and P/E ratio of 21.96 do not reflect the disruptive technology or hyper-growth characteristics required for a high-conviction innovation leader."
+2026-11-18 15:26:03,CTAS,35.93,41.4%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,DDOG,52.33,6.4%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,DXCM,26.19,37.7%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,EXC,15.13,9.1%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,FANG,8.10,4.9%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,FER,43.42,11.6%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,GEHC,14.99,20.0%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,GILD,16.62,-22.4%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,HON,22.20,44.4%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,HONA,N/A,N/A,REJECTED,Missing Data
+2026-11-18 15:26:03,IDXX,41.19,68.9%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,INTC,30.29,-9.6%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,ISRG,34.30,17.9%,AI_PASS,"Intuitive Surgical demonstrates strong innovation leadership with high revenue growth (21.7%) and a solid return on equity (17.9%), though its P/E ratio (34.3) reflects a growth premium."
+2026-11-18 15:26:03,KDP,13.80,6.0%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,LIN,26.06,17.7%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,LITE,13.68,-245.8%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,MAR,N/A,N/A,REJECTED,Missing Data
+2026-11-18 15:26:03,MDLZ,19.69,15.5%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,MPWR,28.19,24.5%,AI_PASS,"Monolithic Power Systems demonstrates exceptional revenue growth at 63.1% alongside a strong ROE of 24.5%, signaling high-conviction leadership in its innovation sector despite a premium P/E ratio."
+2026-11-18 15:26:03,MRNA,-48.44,-34.5%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,MSTR,5.36,-21.6%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,NBIS,-34.69,1.5%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,NFLX,15.81,53.5%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,ORLY,N/A,N/A,REJECTED,Missing Data
+2026-11-18 15:26:03,PANW,67.25,1.7%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,PAYX,17.78,47.1%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,PDD,6.26,22.7%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,PEP,16.50,52.2%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,PYPL,9.81,23.8%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,QCOM,13.45,52.8%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,REGN,13.50,14.9%,AI_PASS,"Regeneron Pharmaceuticals demonstrates strong fundamental metrics with a reasonable P/E ratio of 13.50, a healthy ROE of 14.9%, and exceptional revenue growth of 36.3%, positioning it as a robust innovation leader in the biotech sector."
+2026-11-18 15:26:03,RKLB,764.04,-6.4%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,ROP,19.09,13.2%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,SBUX,N/A,N/A,REJECTED,Missing Data
+2026-11-18 15:26:03,SNPS,23.34,3.7%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,SPCX,N/A,N/A,REJECTED,Missing Data
+2026-11-18 15:26:03,TMUS,11.43,19.4%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,TRI,21.99,14.1%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,TSLA,176.61,3.8%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,TTWO,21.53,-6.8%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,TXN,25.22,39.7%,AI_PASS,"Texas Instruments exhibits an exceptionally high Return on Equity at 39.7% and robust revenue growth of 27.7%, indicating strong operational efficiency and market demand despite a moderate P/E ratio of 25.22, fulfilling the criteria for a high-conviction innovation leader."
+2026-11-18 15:26:03,VRTX,26.92,20.8%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,WMT,39.27,22.3%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,XEL,17.67,11.4%,REJECTED,Failed Pre-Screen
+2026-11-18 15:26:03,CEG,N/A,N/A,SELL,Rebalance / Audit fail
+2026-11-18 15:26:03,ABNB,N/A,N/A,BUY,"Bought 3 whole shares. TP: 225.81, SL: 153.55"
+2026-11-18 15:26:03,AMZN,N/A,N/A,BUY,"Bought 2 whole shares. TP: 330.6, SL: 224.81"
+2026-11-18 15:26:03,APP,N/A,N/A,BUY,"Bought 1 whole shares. TP: 493.22, SL: 335.39"
+2026-11-18 15:26:03,AVGO,N/A,N/A,BUY,"Bought 1 whole shares. TP: 442.9, SL: 301.17"
+2026-11-18 15:26:03,ISRG,N/A,N/A,BUY,"Bought 1 whole shares. TP: 534.21, SL: 363.26"
+2026-11-18 15:26:03,REGN,N/A,N/A,BUY,"Bought 1 whole shares. TP: 1199.18, SL: 815.44"

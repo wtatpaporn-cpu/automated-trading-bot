@@ -379,3 +379,67 @@ Timestamp,Ticker,Forward P/E,ROE (%),Decision,Notes
 2026-11-19 15:28:26,ADSK,N/A,N/A,BUY,"Bought 2 whole shares. TP: 311.41, SL: 211.76"
 2026-11-19 15:28:26,AMZN,N/A,N/A,BUY,"Bought 2 whole shares. TP: 334.82, SL: 227.68"
 2026-11-19 15:28:26,REGN,N/A,N/A,BUY,"Bought 1 whole shares. TP: 1166.46, SL: 793.19"
+2026-11-20 15:25:35,AAPL,32.97,142.3%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,ABNB,27.34,35.8%,AI_PASS,"Airbnb demonstrates strong fundamentals with a healthy P/E ratio of 27.34, exceptional return on equity (ROE) of 35.8%, and robust revenue growth of 18.9%, making it a high-conviction innovation leader in the travel technology sector."
+2026-11-20 15:25:35,ADP,22.69,78.9%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,ADSK,17.69,53.9%,AI_PASS,"Autodesk exhibits strong financial characteristics with solid revenue growth of 16.1%, an exceptional ROE of 53.9%, and a reasonable P/E ratio of 17.69, supporting its status as a high-conviction innovation leader in design software."
+2026-11-20 15:25:35,AEP,18.38,10.6%,AI_REJECT,"American Electric Power Company is a regulated utility rather than a high-conviction innovation leader, showing moderate growth and standard utility returns."
+2026-11-20 15:25:35,AMGN,17.61,78.4%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,AMZN,23.42,27.4%,AI_PASS,"Amazon exhibits strong fundamentals with a sustainable ROE of 27.4% and solid revenue growth of 12.1%, paired with a reasonable P/E ratio for a dominant innovation leader in e-commerce and cloud computing."
+2026-11-20 15:25:35,AXON,33.47,7.6%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,BKNG,N/A,N/A,REJECTED,Missing Data
+2026-11-20 15:25:35,CCEP,20.91,23.5%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,CMCSA,7.20,11.4%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,COST,44.54,28.4%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,CPRT,17.89,16.2%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,CRWD,143.77,1.5%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,CRWV,-23.09,-63.9%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,CSX,21.43,26.4%,AI_REJECT,"CSX Corporation operates in the freight rail transportation industry, which is a traditional, mature sector rather than a high-conviction innovation-led sector."
+2026-11-20 15:25:35,CTAS,36.66,41.4%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,DDOG,51.03,6.4%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,DXCM,25.65,37.7%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,EXC,15.29,9.1%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,FANG,8.23,4.9%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,FAST,37.09,35.3%,AI_REJECT,"Fastenal Company is a well-managed industrial distributor, but its business model relies on traditional supply chain and fastener distribution rather than disruptive technological innovation, and its P/E ratio of over 37 does not present a compelling valuation for an innovation leader."
+2026-11-20 15:25:35,FER,41.58,11.6%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,GEHC,14.81,20.0%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,GILD,16.69,-22.4%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,HON,22.10,44.4%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,HONA,N/A,N/A,REJECTED,Missing Data
+2026-11-20 15:25:35,IDXX,40.73,68.9%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,INTC,30.17,-9.6%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,KDP,13.89,6.0%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,LIN,26.27,17.7%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,LITE,12.11,-245.8%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,MAR,N/A,N/A,REJECTED,Missing Data
+2026-11-20 15:25:35,MDLZ,19.95,15.5%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,MRNA,-48.87,-34.5%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,MSTR,4.74,-21.6%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,NBIS,-29.14,1.5%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,NFLX,15.61,53.5%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,NXPI,13.41,28.7%,AI_PASS,"NXP Semiconductors demonstrates strong financial metrics with a healthy P/E ratio, a high Return on Equity indicating efficient management, and robust revenue growth reflecting solid demand for its innovation-driven semiconductor products."
+2026-11-20 15:25:35,ORLY,N/A,N/A,REJECTED,Missing Data
+2026-11-20 15:25:35,PANW,71.50,2.4%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,PAYX,17.99,47.1%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,PDD,6.82,21.3%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,PEP,16.60,52.2%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,PYPL,9.31,23.8%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,QCOM,13.04,52.8%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,RKLB,671.84,-6.4%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,ROP,19.33,13.2%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,SBUX,N/A,N/A,REJECTED,Missing Data
+2026-11-20 15:25:35,SNPS,22.59,3.7%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,SPCX,N/A,N/A,REJECTED,Missing Data
+2026-11-20 15:25:35,TMUS,11.68,19.4%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,TRI,22.22,14.1%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,TSLA,167.51,3.8%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,TTWO,20.49,-6.8%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,VRTX,26.44,20.8%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,WMT,40.27,22.3%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,XEL,17.59,11.4%,REJECTED,Failed Pre-Screen
+2026-11-20 15:25:35,AVGO,N/A,N/A,SELL,Rebalance / Audit fail
+2026-11-20 15:25:35,MPWR,N/A,N/A,SELL,Rebalance / Audit fail
+2026-11-20 15:25:35,ABNB,N/A,N/A,BUY,"Bought 3 whole shares. TP: 217.54, SL: 147.93"
+2026-11-20 15:25:35,ADSK,N/A,N/A,BUY,"Bought 2 whole shares. TP: 313.78, SL: 213.37"
+2026-11-20 15:25:35,AMZN,N/A,N/A,BUY,"Bought 2 whole shares. TP: 319.32, SL: 217.14"
+2026-11-20 15:25:35,NXPI,N/A,N/A,BUY,"Bought 2 whole shares. TP: 307.46, SL: 209.07"

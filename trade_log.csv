@@ -443,3 +443,67 @@ Timestamp,Ticker,Forward P/E,ROE (%),Decision,Notes
 2026-11-20 15:25:35,ADSK,N/A,N/A,BUY,"Bought 2 whole shares. TP: 313.78, SL: 213.37"
 2026-11-20 15:25:35,AMZN,N/A,N/A,BUY,"Bought 2 whole shares. TP: 319.32, SL: 217.14"
 2026-11-20 15:25:35,NXPI,N/A,N/A,BUY,"Bought 2 whole shares. TP: 307.46, SL: 209.07"
+2026-11-23 15:37:00,AAPL,33.29,142.3%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,ADP,22.23,78.9%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,ADSK,17.68,53.9%,AI_PASS,"Autodesk demonstrates strong financial health with a high ROE of 53.9%, solid revenue growth of 16.1%, and a reasonable P/E ratio of 17.68, positioning it well as an innovation leader in design and engineering software."
+2026-11-23 15:37:00,AEP,18.31,10.6%,AI_REJECT,"American Electric Power Company (AEP) operates as a regulated electric utility company, which is a traditional utility business model rather than a high-conviction innovation leader."
+2026-11-23 15:37:00,AMGN,17.93,78.4%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,AMZN,23.58,27.4%,AI_PASS,"Amazon exhibits strong fundamentals with a high ROE of 27.4%, robust revenue growth of 12.1%, and a reasonable P/E ratio of 23.58, supporting its position as a high-conviction innovation leader."
+2026-11-23 15:37:00,APP,18.40,210.1%,AI_PASS,"Applovin Corporation displays exceptional financial metrics with an extremely high ROE of 210.1% and robust revenue growth of 55.5%, combined with a reasonable P/E ratio of 18.40, indicating strong fundamental strength and innovation leadership in its sector."
+2026-11-23 15:37:00,AXON,32.68,7.6%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,BKNG,N/A,N/A,REJECTED,Missing Data
+2026-11-23 15:37:00,CCEP,20.84,23.5%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,CMCSA,6.95,11.4%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,COST,43.60,28.4%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,CPRT,17.71,16.2%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,CRWD,128.81,1.5%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,CRWV,-27.87,-63.9%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,CSX,21.31,26.4%,AI_REJECT,CSX Corporation operates in the traditional railroad transportation sector rather than high-growth innovation domains.
+2026-11-23 15:37:00,CTAS,36.22,41.4%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,DDOG,53.33,6.4%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,DXCM,26.28,37.7%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,EXC,15.09,9.1%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,FANG,8.08,4.9%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,FER,42.10,11.6%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,GEHC,14.81,20.0%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,GILD,16.74,-22.4%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,HON,22.29,44.4%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,HONA,N/A,N/A,REJECTED,Missing Data
+2026-11-23 15:37:00,IDXX,41.01,68.9%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,INTC,32.90,-9.6%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,KDP,13.92,6.0%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,LIN,26.12,17.7%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,LITE,13.99,-245.8%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,MAR,N/A,N/A,REJECTED,Missing Data
+2026-11-23 15:37:00,MDLZ,19.52,15.5%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,MRNA,-50.56,-34.5%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,MSTR,5.14,-21.6%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,NBIS,-33.90,1.5%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,NFLX,15.45,53.5%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,NXPI,14.10,28.7%,AI_PASS,"NXPI demonstrates strong fundamental metrics with a reasonable P/E ratio of 14.10, an impressive ROE of 28.7%, and solid revenue growth of 19.3%, aligning with the criteria for a high-conviction innovation leader."
+2026-11-23 15:37:00,ORLY,N/A,N/A,REJECTED,Missing Data
+2026-11-23 15:37:00,PANW,73.18,2.4%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,PAYX,17.51,47.1%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,PDD,6.87,21.3%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,PEP,16.30,52.2%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,PYPL,9.22,23.8%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,QCOM,13.47,52.8%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,REGN,13.11,14.9%,AI_PASS,"Regeneron Pharmaceuticals demonstrates exceptional revenue growth of 36.3% alongside a healthy ROE of 14.9% and an attractive P/E ratio of 13.11, indicating strong fundamental performance and value for a high-conviction innovation leader in biotech."
+2026-11-23 15:37:00,RKLB,708.16,-6.4%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,ROP,18.63,13.2%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,ROST,24.18,43.0%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,SBUX,N/A,N/A,REJECTED,Missing Data
+2026-11-23 15:37:00,SNPS,23.13,3.7%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,SPCX,N/A,N/A,REJECTED,Missing Data
+2026-11-23 15:37:00,TMUS,11.53,19.4%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,TRI,21.64,14.1%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,TSLA,181.89,3.8%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,TTWO,21.20,-6.8%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,VRTX,26.62,20.8%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,WMT,39.71,20.6%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,XEL,17.49,11.4%,REJECTED,Failed Pre-Screen
+2026-11-23 15:37:00,ADSK,N/A,N/A,BUY,"Bought 2 whole shares. TP: 313.84, SL: 213.41"
+2026-11-23 15:37:00,AMZN,N/A,N/A,BUY,"Bought 2 whole shares. TP: 321.94, SL: 218.92"
+2026-11-23 15:37:00,APP,N/A,N/A,BUY,"Bought 1 whole shares. TP: 479.32, SL: 325.94"
+2026-11-23 15:37:00,NXPI,N/A,N/A,BUY,"Bought 2 whole shares. TP: 323.34, SL: 219.87"
+2026-11-23 15:37:00,REGN,N/A,N/A,BUY,"Bought 1 whole shares. TP: 1174.06, SL: 798.36"

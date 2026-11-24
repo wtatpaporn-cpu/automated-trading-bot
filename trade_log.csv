@@ -507,3 +507,64 @@ Timestamp,Ticker,Forward P/E,ROE (%),Decision,Notes
 2026-11-23 15:37:00,APP,N/A,N/A,BUY,"Bought 1 whole shares. TP: 479.32, SL: 325.94"
 2026-11-23 15:37:00,NXPI,N/A,N/A,BUY,"Bought 2 whole shares. TP: 323.34, SL: 219.87"
 2026-11-23 15:37:00,REGN,N/A,N/A,BUY,"Bought 1 whole shares. TP: 1174.06, SL: 798.36"
+2026-11-24 15:33:05,AAPL,33.33,142.3%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,ABNB,27.51,35.8%,AI_PASS,"Airbnb demonstrates strong financial performance with a healthy P/E ratio, robust Return on Equity (ROE) of 35.8%, and strong revenue growth of 18.9%, indicating solid market leadership and innovation."
+2026-11-24 15:33:05,ADP,22.87,78.9%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,AMGN,18.45,78.4%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,AXON,32.82,7.6%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,BKNG,N/A,N/A,REJECTED,Missing Data
+2026-11-24 15:33:05,CCEP,21.04,23.5%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,CMCSA,7.19,11.4%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,COST,43.58,28.4%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,CPRT,18.47,16.2%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,CRWD,126.59,2.5%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,CRWV,-24.45,-63.9%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,CTAS,36.66,41.4%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,DDOG,52.34,6.4%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,DXCM,26.63,37.7%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,EXC,15.36,9.1%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,FANG,8.18,4.9%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,FAST,36.52,35.3%,AI_REJECT,"Fastenal is an industrial distributor with strong historical ROE, but its high P/E ratio and mature business model do not align with the profile of a high-conviction innovation leader."
+2026-11-24 15:33:05,FER,42.05,11.6%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,GEHC,14.90,20.0%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,GILD,17.40,-22.4%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,HON,22.49,44.4%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,HONA,N/A,N/A,REJECTED,Missing Data
+2026-11-24 15:33:05,IDXX,41.40,68.9%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,INTC,30.99,-9.6%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,ISRG,34.55,17.9%,AI_PASS,"Intuitive Surgical, Inc. exhibits strong fundamentals with robust revenue growth of 21.7% and a solid Return on Equity (ROE) of 17.9%, justifying its premium P/E ratio of 34.55 as a leader in medical robotics and innovation."
+2026-11-24 15:33:05,KDP,14.25,6.0%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,LIN,26.47,17.7%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,LITE,12.35,-245.8%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,MAR,N/A,N/A,REJECTED,Missing Data
+2026-11-24 15:33:05,MDLZ,19.84,15.5%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,MRNA,-53.36,-34.5%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,MSTR,4.65,-21.6%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,NBIS,-28.71,1.5%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,NFLX,15.71,53.5%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,ORLY,N/A,N/A,REJECTED,Missing Data
+2026-11-24 15:33:05,PANW,70.98,2.4%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,PAYX,18.04,47.1%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,PDD,6.79,21.3%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,PEP,16.60,52.2%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,PYPL,9.51,23.8%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,QCOM,13.38,52.8%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,REGN,13.60,14.9%,AI_PASS,"Regeneron Pharmaceuticals demonstrates exceptional fundamentals with a high revenue growth of 36.3%, a solid ROE of 14.9%, and an attractive P/E ratio of 13.60, indicating strong market leadership and financial health."
+2026-11-24 15:33:05,RKLB,634.74,-6.4%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,ROP,19.22,13.2%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,ROST,24.64,43.0%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,SBUX,N/A,N/A,REJECTED,Missing Data
+2026-11-24 15:33:05,SNPS,22.37,3.7%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,SPCX,N/A,N/A,REJECTED,Missing Data
+2026-11-24 15:33:05,TMUS,11.96,19.4%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,TRI,22.66,14.1%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,TSLA,176.31,3.8%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,TTWO,21.63,-6.8%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,VRTX,28.12,20.8%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,WMT,40.83,20.6%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,XEL,17.66,11.4%,REJECTED,Failed Pre-Screen
+2026-11-24 15:33:05,AMZN,N/A,N/A,SELL,Rebalance / Audit fail
+2026-11-24 15:33:05,NXPI,N/A,N/A,SELL,Rebalance / Audit fail
+2026-11-24 15:33:05,ABNB,N/A,N/A,BUY,"Bought 3 whole shares. TP: 218.16, SL: 148.35"
+2026-11-24 15:33:05,ISRG,N/A,N/A,BUY,"Bought 1 whole shares. TP: 538.98, SL: 366.51"
+2026-11-24 15:33:05,REGN,N/A,N/A,BUY,"Bought 1 whole shares. TP: 1228.0, SL: 835.04"

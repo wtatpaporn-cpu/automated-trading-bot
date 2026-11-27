@@ -693,3 +693,72 @@ Timestamp,Ticker,Forward P/E,ROE (%),Decision,Notes
 2026-11-26 15:31:54,APP,N/A,N/A,BUY,"Bought 1 whole shares. TP: 473.69, SL: 322.11"
 2026-11-26 15:31:54,ISRG,N/A,N/A,BUY,"Bought 1 whole shares. TP: 533.97, SL: 363.1"
 2026-11-26 15:31:54,REGN,N/A,N/A,BUY,"Bought 1 whole shares. TP: 1227.34, SL: 834.59"
+2026-11-27 15:28:59,AAPL,33.89,142.3%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,ABNB,27.89,35.8%,AI_PASS,"Airbnb demonstrates strong profitability with an exceptional ROE of 35.8% and robust revenue growth of 18.9%, trading at a reasonable P/E ratio for a high-growth tech innovator."
+2026-11-27 15:28:59,ADP,23.58,78.9%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,ADSK,17.79,55.5%,AI_PASS,"Autodesk exhibits strong revenue growth at 16.6%, an exceptional ROE of 55.5%, and a reasonable P/E of 17.79, indicating it is an innovation leader with solid financial health."
+2026-11-27 15:28:59,AEP,18.47,10.6%,AI_REJECT,"American Electric Power Company is a regulated utility company rather than a high-conviction innovation leader, despite stable financial metrics."
+2026-11-27 15:28:59,AMGN,18.73,78.4%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,APP,18.93,210.1%,AI_PASS,"Applovin Corporation displays exceptional return on equity (210.1%) and very strong revenue growth (55.5%), alongside a reasonable P/E ratio of 18.93, indicating strong high-conviction innovation leadership and profitability."
+2026-11-27 15:28:59,AXON,38.68,7.6%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,BKNG,N/A,N/A,REJECTED,Missing Data
+2026-11-27 15:28:59,CCEP,21.29,23.5%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,CMCSA,7.39,11.4%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,COST,43.74,28.4%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,CPRT,18.89,16.2%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,CRWD,127.91,2.3%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,CRWV,-23.46,-63.9%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,CSX,21.88,26.4%,AI_REJECT,"CSX Corporation operates in the traditional railroad transportation industry, which is a mature and capital-intensive sector rather than a high-conviction innovation leader."
+2026-11-27 15:28:59,CTAS,36.94,41.4%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,DDOG,51.25,6.4%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,DXCM,27.02,37.7%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,EXC,15.41,9.1%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,FANG,8.66,4.9%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,FAST,37.40,35.3%,AI_REJECT,"Fastenal is an industrial distributor with solid ROE and revenue growth, but its business model is rooted in supply chain and industrial distribution rather than high-conviction disruptive innovation."
+2026-11-27 15:28:59,FER,42.78,11.6%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,GEHC,15.34,20.0%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,GILD,17.34,-22.4%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,HON,22.96,44.4%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,HONA,N/A,N/A,REJECTED,Missing Data
+2026-11-27 15:28:59,IDXX,42.23,68.9%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,INTC,31.15,-9.6%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,ISRG,34.27,17.9%,AI_PASS,"Intuitive Surgical demonstrates robust financial health and market leadership with strong revenue growth of 21.7% and a solid ROE of 17.9%, justifying its premium P/E ratio as a dominant player in robotic-assisted surgery."
+2026-11-27 15:28:59,KDP,14.10,6.0%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,LIN,27.06,17.7%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,LITE,12.51,-245.8%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,MAR,N/A,N/A,REJECTED,Missing Data
+2026-11-27 15:28:59,MDLZ,20.12,15.5%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,MRNA,-52.26,-34.5%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,MSTR,4.70,-21.6%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,NBIS,-28.13,1.5%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,NFLX,16.05,53.5%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,NXPI,13.67,28.7%,AI_PASS,"NXP Semiconductors N.V. demonstrates strong financial health with a solid Return on Equity (ROE) of 28.7% and robust revenue growth of 19.3%, coupled with an attractive Price-to-Earnings (P/E) ratio of 13.67, indicating strong fundamentals and value in the semiconductor innovation space."
+2026-11-27 15:28:59,ORLY,N/A,N/A,REJECTED,Missing Data
+2026-11-27 15:28:59,PANW,71.84,2.4%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,PAYX,18.50,47.1%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,PCAR,15.96,13.7%,AI_REJECT,"While PACCAR Inc. has a solid ROE and revenue growth, it operates in the traditional heavy-duty truck manufacturing sector rather than being a high-conviction innovation leader with hyper-growth characteristics."
+2026-11-27 15:28:59,PDD,7.11,21.3%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,PEP,16.79,52.2%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,PYPL,10.04,23.8%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,QCOM,14.37,52.8%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,REGN,13.60,14.9%,AI_PASS,"Regeneron demonstrates strong fundamentals with robust revenue growth of 36.3%, a healthy return on equity of 14.9%, and an attractive P/E ratio of 13.6, indicating strong innovation leadership and reasonable valuation."
+2026-11-27 15:28:59,RKLB,689.58,-6.4%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,ROP,19.75,13.2%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,ROST,24.77,43.0%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,SBUX,N/A,N/A,REJECTED,Missing Data
+2026-11-27 15:28:59,SNPS,22.23,3.7%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,SPCX,N/A,N/A,REJECTED,Missing Data
+2026-11-27 15:28:59,TMUS,11.78,19.4%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,TRI,23.72,14.1%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,TSLA,183.98,3.8%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,TTWO,22.82,-6.8%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,VRTX,26.34,20.8%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,WDAY,13.60,16.3%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,WMT,40.89,20.6%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,XEL,17.79,11.4%,REJECTED,Failed Pre-Screen
+2026-11-27 15:28:59,ABNB,N/A,N/A,BUY,"Bought 3 whole shares. TP: 221.71, SL: 150.76"
+2026-11-27 15:28:59,ADSK,N/A,N/A,BUY,"Bought 2 whole shares. TP: 315.79, SL: 214.74"
+2026-11-27 15:28:59,APP,N/A,N/A,BUY,"Bought 1 whole shares. TP: 494.49, SL: 336.25"
+2026-11-27 15:28:59,ISRG,N/A,N/A,BUY,"Bought 1 whole shares. TP: 533.77, SL: 362.97"
+2026-11-27 15:28:59,NXPI,N/A,N/A,BUY,"Bought 2 whole shares. TP: 313.88, SL: 213.44"
+2026-11-27 15:28:59,REGN,N/A,N/A,BUY,"Bought 1 whole shares. TP: 1227.13, SL: 834.45"
